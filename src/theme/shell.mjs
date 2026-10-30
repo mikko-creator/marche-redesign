@@ -40,8 +40,13 @@ export function crumbsHtml(crumbs) {
   return `<nav class="crumbs" aria-label="Breadcrumb"><ol>${crumbs.map(([h, l], i) => (i < crumbs.length - 1 ? `<li><a href="${escA(href(h))}">${esc(l)}</a></li>` : `<li aria-current="page">${esc(l)}</li>`)).join('')}</ol></nav>`;
 }
 
-const LOGO = { src: '/assets/brand/marche-logo-white.png', w: 2677, h: 471 };
-const logoImg = (alt, cls, eager = false) => `<img${attrs({ class: cls, src: LOGO.src, alt, width: LOGO.w, height: LOGO.h, decoding: 'async', loading: eager ? 'eager' : 'lazy', fetchpriority: eager ? 'high' : false })}>`;
+// The wordmark ships as lossless WebP 358/722/1080 px wide (2.3/4.7/7.4 KB; cut at the master's exact 2677:471 ratio, so the
+// header lays out to the same 0.05 px) instead of the 2677 px master PNG (30 KB):
+// the header shows it 103-148 CSS px wide, the footer up to 239, the age gate 220. The header copy is eager (it is on
+// every first screen) but not high priority, so the page's LCP image keeps the bandwidth.
+const LOGO = { w: 2677, h: 471 };
+export const LOGO_SRCSET = [358, 722, 1080].map((w) => `/assets/brand/marche-logo-white-${w}.webp ${w}w`).join(', ');
+const logoImg = (alt, cls, sizes, eager = false) => `<img${attrs({ class: cls, src: '/assets/brand/marche-logo-white-722.webp', srcset: LOGO_SRCSET, sizes, alt, width: LOGO.w, height: LOGO.h, decoding: 'async', loading: eager ? 'eager' : 'lazy' })}>`;
 const isCur = (h, path) => href(h) === path;
 const cur = (h, path) => (isCur(h, path) ? ' aria-current="page"' : '');
 
@@ -84,7 +89,7 @@ function megaOwnsPath(ctx, it, path) {
 }
 
 function navHtml(ctx, path) {
-  const { nav, cta, utility: u } = ctx.ia;
+  const { nav, cta, utility: u, promo } = ctx.ia;
   const items = nav.map((it) => {
     if (!it.mega) {
       return `<li class="nav__item"><a class="nav__link"${linkAttrs(it.href)}${cur(it.href, path)}><span>${esc(it.label)}</span></a></li>`;
@@ -103,6 +108,7 @@ ${megaCard(it.feature)}
   }).join('\n');
   return `<nav class="nav" id="site-nav" aria-label="Main" data-nav>
 <div class="nav__drawer-head"><span class="nav__drawer-title">Menu</span><button class="nav__close" type="button" data-nav-close>${icon('close')}<span class="sr-only">Close menu</span></button></div>
+<p class="nav__promo"><span>${esc(promo.text)}</span><a class="nav__promo-cta"${linkAttrs(promo.href)}>${esc(promo.cta)}${icon('arrow')}</a></p>
 <ul class="nav__list">
 ${items}
 </ul>
@@ -119,7 +125,7 @@ function headerHtml(ctx, path) {
   const { cta } = ctx.ia;
   return `<header class="site-header" data-header>
 <div class="site-header__inner wrap wrap--wide">
-<a class="brand"${linkAttrs('/')}${path === '/' ? ' aria-current="page"' : ''}>${logoImg(ctx.site.name, 'brand__logo', true)}</a>
+<a class="brand"${linkAttrs('/')}${path === '/' ? ' aria-current="page"' : ''}>${logoImg(ctx.site.name, 'brand__logo', '(max-width: 379.98px) 103px, (max-width: 767.98px) 120px, 148px', true)}</a>
 ${navHtml(ctx, path)}
 <div class="header-tools">
 <a class="header-tool"${linkAttrs('/shop/', { title: 'Search the menu' })}>${icon('search')}<span class="sr-only">Search the menu</span></a>
@@ -160,7 +166,7 @@ function footerHtml(ctx) {
 <div class="wrap wrap--wide">
 <div class="footer__top">
 <div class="footer__brand">
-<a class="brand brand--footer"${linkAttrs('/')}>${logoImg(s.name, 'brand__logo')}</a>
+<a class="brand brand--footer"${linkAttrs('/')}>${logoImg(s.name, 'brand__logo', '(max-width: 1000px) 171px, 239px')}</a>
 <p class="footer__tag">${s.tagline.lines.map((l, i) => (i === s.tagline.lines.length - 1 ? `<span class="accent">${esc(l)}</span>` : `<span>${esc(l)}</span>`)).join(' ')}</p>
 </div>
 <div class="btn-row footer__cta">
@@ -185,7 +191,7 @@ ${f.columns.map(col).join('\n')}
 function gateHtml(ctx) {
   return `<div class="age-gate" data-age-gate data-age-key="${escA(ctx.site.ageGateKey || 'marche-age-ok')}" hidden>
 <div class="age-gate__card glass glass--lit glass--strong" role="dialog" aria-modal="true" aria-labelledby="age-gate-q" aria-describedby="age-gate-d">
-${logoImg('', 'age-gate__logo')}
+${logoImg('', 'age-gate__logo', '220px')}
 <h2 class="age-gate__q" id="age-gate-q">Are you 21 or older?</h2>
 <p class="age-gate__d" id="age-gate-d">Please confirm your age to enter.</p>
 <div class="btn-row age-gate__actions"><button class="btn btn--sun" type="button" data-age-yes>Yes</button><button class="btn btn--ghost" type="button" data-age-no>No</button></div>

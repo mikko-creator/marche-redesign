@@ -99,7 +99,7 @@ const joinList = (xs) => (xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', 
 function pcard(ctx, p, i, { eager = false } = {}) {
   return `<li class="s-grid__item" data-reveal style="--i:${i}">
 <article class="pcard" data-tilt>
-<div class="pcard__media">${photo(ctx, p.photo, { cls: 'cut', eager, sizes: '(min-width: 1024px) 380px, (min-width: 600px) 44vw, 82vw' })}</div>
+<div class="pcard__media">${photo(ctx, p.photo, { cls: 'cut', eager, sizes: '(max-width: 760px) 40vw, (min-width: 1024px) 380px, (min-width: 600px) 44vw, 82vw' })}</div>
 <h3 class="pcard__name">${p.nameLines.map((l) => `<span>${esc(l)}</span>`).join(' ')}</h3>
 <p class="pcard__price">${esc(p.price)}</p>
 <button type="button" class="pcard__add" data-demo-add aria-label="Add ${escA(p.name)} to cart (preview)">${icon('plus')}</button>
@@ -154,13 +154,13 @@ ${more}
 </section>`;
     }
     const deco = c.slug === 'pre-rolls'
-      ? `<span class="s-catcard__cut">${photo(ctx, 'high-90s-preroll-pack.webp', { cls: 'cut', sizes: '(min-width: 1024px) 300px, 40vw' })}</span>`
+      ? `<span class="s-catcard__cut">${photo(ctx, 'high-90s-preroll-pack.webp', { cls: 'cut', sizes: '(max-width: 760px) 96px, (min-width: 1024px) 300px, 40vw' })}</span>`
       : '';
     const extra = c.slug === 'medical' ? `<a class="link-arrow"${linkAttrs(MED_CARD)}>Getting a Medical Card</a>` : '';
     return `<section class="s-sec" id="${escA(c.slug)}" aria-labelledby="s-h-${escA(c.slug)}">
 ${head}
 <div class="s-catcard glass glass--lit glass--lift${deco ? ' s-catcard--cut' : ''}" data-reveal>
-<div class="s-catcard__art" aria-hidden="true">${gimg(ART[c.slug], { alt: '', cls: 's-catcard__img screen', sizes: '(min-width: 1024px) 640px, 100vw' })}</div>
+<div class="s-catcard__art" aria-hidden="true">${gimg(ART[c.slug], { alt: '', cls: 's-catcard__img screen', sizes: '(max-width: 760px) 92vw, (min-width: 1024px) 640px, 100vw' })}</div>
 ${deco}
 <div class="s-catcard__body">
 <p class="kicker">${esc(c.label)}</p>
@@ -177,7 +177,7 @@ ${deco}
     const prods = s.products.filter((p) => p.brand === b.name);
     const ph = brandPhoto[b.name] || (prods[0] && prods[0].photo);
     return `<li class="s-brand glass glass--lit glass--lift" id="${escA(brandId(b.name))}" data-reveal style="--i:${i}">
-<div class="s-brand__cut" aria-hidden="true">${ph ? photo(ctx, ph, { alt: '', cls: 'cut', sizes: '(min-width: 1024px) 260px, 44vw' }) : ''}</div>
+<div class="s-brand__cut" aria-hidden="true">${ph ? photo(ctx, ph, { alt: '', cls: 'cut', sizes: '(max-width: 760px) 32vw, (min-width: 1024px) 260px, 44vw' }) : ''}</div>
 <div class="s-brand__body">
 <p class="kicker">Brand</p>
 <h3 class="s-brand__name">${esc(b.name)}</h3>
@@ -208,7 +208,7 @@ ${demoForm({ id: 's-menu-search', fields: ['Search the menu'], button: 'Search',
 <p class="s-note">${esc(SAMPLE_NOTE)}</p>
 </div>
 </div>
-<div class="s-hero__cut protrude" aria-hidden="true"><div class="s-hero__float" data-depth="0.08">${photo(ctx, 'crescendo-jar.webp', { alt: '', cls: 'cut', eager: true, sizes: '(min-width: 1024px) 440px, 42vw' })}</div></div>
+<div class="s-hero__cut protrude" aria-hidden="true"><div class="s-hero__float" data-depth="0.08">${photo(ctx, 'crescendo-jar.webp', { alt: '', cls: 'cut', eager: true, sizes: '(max-width: 760px) 140px, (min-width: 1024px) 440px, 42vw' })}</div></div>
 </section>
 
 <section class="band band--void s-menu" aria-label="Menu categories">
@@ -320,7 +320,7 @@ ${crumbsHtml(crumbs)}
 <a class="btn btn--ghost"${linkAttrs(DEALS)}>Deals</a>
 </div>
 </div>
-${cutFile ? `<div class="s-cathero__cut protrude" aria-hidden="true"><div data-depth="0.06">${photo(ctx, cutFile, { alt: '', cls: 'cut', eager: true, sizes: '(min-width: 1024px) 360px, 38vw' })}</div></div>` : ''}
+${cutFile ? `<div class="s-cathero__cut protrude" aria-hidden="true"><div data-depth="0.06">${photo(ctx, cutFile, { alt: '', cls: 'cut', sizes: '(max-width: 760px) 112px, (min-width: 1024px) 360px, 38vw' })}</div></div>` : ''}
 </section>
 
 <section class="band band--void s-guide${cutFile ? ' s-after-cut' : ''}" aria-labelledby="s-guide-h">
@@ -364,9 +364,9 @@ ${areasF ? `<a class="s-more__card glass glass--lit glass--lift" data-reveal sty
 
 // ---------- /dispensaries/california/deals/ ----------
 function dealArt(ctx, d) {
-  if (d.id === 'crescendo-10') return `<span class="s-deal__cut">${photo(ctx, 'crescendo-jar.webp', { alt: '', cls: 'cut', sizes: '(min-width: 1024px) 260px, 50vw' })}</span>`;
+  if (d.id === 'crescendo-10') return `<span class="s-deal__cut">${photo(ctx, 'crescendo-jar.webp', { alt: '', cls: 'cut', sizes: '(max-width: 760px) 44vw, (min-width: 1024px) 260px, 50vw' })}</span>`;
   const id = /pre-?roll/i.test(d.what) ? 'g-prerolls' : 'g-bud-key';
-  return gimg(id, { alt: '', cls: 's-deal__img screen', sizes: '(min-width: 1024px) 400px, 90vw' });
+  return gimg(id, { alt: '', cls: 's-deal__img screen', sizes: '(max-width: 760px) 92vw, (min-width: 1024px) 400px, 90vw' });
 }
 
 function dealsPage(ctx) {
@@ -459,7 +459,7 @@ ${crumbsHtml(crumbs)}
 ${demoForm({ id: 'join', fields: ref.fields, button: ref.button, cls: 's-form' })}
 </div>
 </div>
-<div class="s-rhero__cut protrude" aria-hidden="true"><div data-depth="0.06">${gimg('g-leaf-cut', { alt: '', cls: 's-rhero__leaf screen', sizes: '(min-width: 1024px) 300px, 34vw' })}</div></div>
+<div class="s-rhero__cut protrude" aria-hidden="true"><div data-depth="0.06">${gimg('g-leaf-cut', { alt: '', cls: 's-rhero__leaf screen', sizes: '(max-width: 760px) 84px, (min-width: 1024px) 300px, 34vw' })}</div></div>
 </section>
 
 <section class="band band--void s-first s-after-cut" id="first-customer" aria-labelledby="s-first-h">

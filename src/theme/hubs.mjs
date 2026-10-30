@@ -4,7 +4,7 @@
 // Content rule (BUILD-CONTRACT D2): every visible fact comes from site.json / ia.json as written; the only new words
 // are neutral labels and one-line intros. Nothing with status "unconfirmed" is read here.
 import { esc, escA, linkAttrs, gimg, photo, absUrl, areas, isExternal } from './util.mjs';
-import { page, crumbsHtml, icon } from './shell.mjs';
+import { page, crumbsHtml, icon, LOGO_SRCSET } from './shell.mjs';
 
 // Hero art rotation (generated ids, all shot on black; decorative, never captioned as a place - D5).
 export const ART = ['g-palms-night', 'g-doorstep', 'g-smoke-beam', 'g-gold-dust'];
@@ -130,7 +130,7 @@ export function hero({ crumbs = [], kicker = '', title, line = '', lede = '', ac
 }
 
 function heroCut(ctx, file, cls = '') {
-  return `<div class="protrude d-hero__cut${cls ? ' ' + cls : ''}" aria-hidden="true"><div class="d-hero__cutin" data-depth="-0.08">${photo(ctx, file, { alt: '', cls: 'cut', sizes: '(max-width: 767px) 160px, 400px' })}</div></div>`;
+  return `<div class="protrude d-hero__cut${cls ? ' ' + cls : ''}" aria-hidden="true"><div class="d-hero__cutin" data-depth="-0.08">${photo(ctx, file, { alt: '', cls: 'cut', sizes: '(max-width: 767px) 112px, 400px' })}</div></div>`;
 }
 
 // Hours as stats: Delivery / Pick-up / At Your Door - 45 Minutes or Less (site.json hours + tagline).
@@ -190,7 +190,7 @@ function render404(ctx) {
 <section class="band band--void d-404" data-spot aria-labelledby="d-h1">
   <div class="band__clip" aria-hidden="true"><span class="d-hero__pool d-404__pool"></span></div>
   <div class="wrap wrap--narrow d-404__inner">
-    <img class="d-404__mark" src="/assets/brand/marche-logo-white.png" width="2677" height="471" alt="${escA(ctx.site.wordmark)}" decoding="async">
+    <img class="d-404__mark" src="/assets/brand/marche-logo-white-722.webp" srcset="${LOGO_SRCSET}" sizes="(max-width: 523px) 220px, (max-width: 1238px) 42vw, 520px" width="2677" height="471" alt="${escA(ctx.site.wordmark)}" decoding="async">
     <h1 class="display d-404__title" id="d-h1">Page <span class="accent">not found</span></h1>
     <p class="d-404__line">This page is not on the menu.</p>
     <div class="btn-row d-404__actions">${btn(P.home, 'Home')}${btn(P.shop, 'Shop', 'btn btn--ghost')}</div>

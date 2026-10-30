@@ -20,6 +20,8 @@ glassmorphism x tenebrism look, on the information architecture of a large multi
 - `.glass--sun` (offers) and `.glass--rose` (rewards) are tinted panes; `.glass--strong` carries body text;
   `.glass--lift` lifts on hover while a light sheen sweeps across it.
 - The header frosts on its own pseudo-element, so the mega menus can blur what is behind them.
+- Phones (720 px and below): panes become opaque smoked fills without a live blur, which is costly on phone graphics
+  chips; the lit edges and tints stay. The header bar, the age gate and the home hero's promo pane keep their blur.
 
 ## Depth (front plane)
 
@@ -33,7 +35,7 @@ glassmorphism x tenebrism look, on the information architecture of a large multi
 
 - NATS, always uppercase, set big and tight for display (`.display`, `.display--mega` once per page); one accent per
   heading at most (`.accent` yellow, `.accent--rose`, or an outlined word `.outline`).
-- Poppins for UI: kickers in caps with a short yellow tick (`.kicker`), buttons, nav, prices.
+- Poppins for UI: kickers in spaced caps (`.kicker`, no leading tick), buttons, nav, prices.
 - Montserrat for body copy at 16 px, line height 1.65; `.lede` for intros, `.prose` for long text.
 
 ## Components

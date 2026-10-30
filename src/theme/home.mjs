@@ -39,6 +39,8 @@ function heroLoop(ctx) {
     webm: pick(m.webm, `assets/media/${id}.webm`),
     phone: pick(m.phone, m.mp4Phone, m.mp4Small, m.sm, m.small, `assets/media/${id}-sm.mp4`, `assets/media/${id}-phone.mp4`),
     poster: pick(m.poster, `assets/media/${id}.jpg`, `assets/media/${id}-poster.webp`, `assets/media/${id}-poster.jpg`),
+    // phones: the first frame of the phone cut (720x1080), so the 1920px desktop poster never reaches a phone
+    posterPhone: pick(m.posterSmall, m.posterPhone, `assets/media/${id}-sm.jpg`),
   };
 }
 
@@ -82,8 +84,12 @@ export async function render(ctx) {
   // the pointer ([data-spot] sets --lx/--ly), the promo carousel as a glass rotator strip, the two priced products as
   // cut-outs that cross the hero's bottom edge into the hours band ----------
   const loop = heroLoop(ctx);
+  // the poster <img> sits under the video and covers it until the first frame, so the video carries no poster
+  // attribute (that would fetch the 1920px still on phones too); phones get the phone frame through <picture>
+  const posterImg = loop && loop.poster ? `<img class="h-hero__poster" src="${escA(loop.poster)}" alt="" decoding="async" fetchpriority="high">` : '';
+  const poster = posterImg && loop.posterPhone ? `<picture><source media="(max-width: 720px)" srcset="${escA(loop.posterPhone)}">${posterImg}</picture>` : posterImg;
   const heroBg = loop
-    ? `<div class="band__bg h-hero__film">${loop.poster ? `<img class="h-hero__poster" src="${escA(loop.poster)}" alt="" decoding="async" fetchpriority="high">` : ''}<video class="h-hero__video" autoplay muted loop playsinline preload="auto"${loop.poster ? ` poster="${escA(loop.poster)}"` : ''} aria-hidden="true" tabindex="-1">${loop.phone ? `<source src="${escA(loop.phone)}" type="video/mp4" media="(max-width: 720px)">` : ''}${loop.webm ? `<source src="${escA(loop.webm)}" type="video/webm">` : ''}<source src="${escA(loop.mp4)}" type="video/mp4"></video></div>`
+    ? `<div class="band__bg h-hero__film">${poster}<video class="h-hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">${loop.phone ? `<source src="${escA(loop.phone)}" type="video/mp4" media="(max-width: 720px)">` : ''}${loop.webm ? `<source src="${escA(loop.webm)}" type="video/webm">` : ''}<source src="${escA(loop.mp4)}" type="video/mp4"></video></div>`
     : gimg('g-hero-bud', { cls: 'band__bg h-hero__bg', alt: '', eager: true, sizes: '100vw' });
   const promoSlides = [
     { href: '/rewards/#first-customer', ico: 'user', k: fc.sub, t: fc.title },
@@ -108,8 +114,8 @@ ${promoSlides.map((s, i) => `<a class="h-promo" data-slide${linkAttrs(s.href)} a
 </div>
 <div class="h-hero__stage">
 <span class="h-hero__halo" aria-hidden="true"></span>
-<div class="h-hero__prod h-hero__prod--b protrude"><div class="h-hero__lift" data-depth="0.06">${photo(ctx, pb.photo, { cls: 'cut h-hero__cut', eager: true, sizes: '(min-width: 768px) 24vw, 44vw' })}</div></div>
-<div class="h-hero__prod h-hero__prod--a protrude"><div class="h-hero__lift" data-depth="0.12">${photo(ctx, pa.photo, { cls: 'cut h-hero__cut', eager: true, sizes: '(min-width: 768px) 30vw, 54vw' })}</div></div>
+<div class="h-hero__prod h-hero__prod--b protrude"><div class="h-hero__lift" data-depth="0.06">${photo(ctx, pb.photo, { cls: 'cut h-hero__cut', sizes: '(max-width: 720px) 34vw, (min-width: 768px) 24vw, 44vw' })}</div></div>
+<div class="h-hero__prod h-hero__prod--a protrude"><div class="h-hero__lift" data-depth="0.12">${photo(ctx, pa.photo, { cls: 'cut h-hero__cut', sizes: '(max-width: 720px) 44vw, (min-width: 768px) 30vw, 54vw' })}</div></div>
 </div>
 </div>
 </section>`;
@@ -138,7 +144,7 @@ ${promoSlides.map((s, i) => `<a class="h-promo" data-slide${linkAttrs(s.href)} a
   const catsHtml = `<section class="h-cats band band--void" aria-labelledby="h-cats-h">
 <div class="wrap wrap--wide">
 ${head('Menu', 'Shop by <span class="accent">category</span>', 'h-cats-h')}
-<ul class="h-cats__grid" role="list">${menu.map((m, i) => `<li class="h-cats__item" data-reveal style="--i:${i}"><a class="h-cat glass glass--lit glass--lift"${linkAttrs(m.href)}><span class="h-cat__media">${gimg(m.art, { alt: '', sizes: '(min-width: 1024px) 16vw, (min-width: 768px) 30vw, 46vw' })}</span><span class="h-cat__name">${esc(m.label)}${icon('arrow', 'h-cat__go')}</span></a></li>`).join('')}</ul>
+<ul class="h-cats__grid" role="list">${menu.map((m, i) => `<li class="h-cats__item" data-reveal style="--i:${i}"><a class="h-cat glass glass--lit glass--lift"${linkAttrs(m.href)}><span class="h-cat__media">${gimg(m.art, { alt: '', sizes: '(max-width: 720px) 42vw, (min-width: 1024px) 16vw, (min-width: 768px) 30vw, 46vw' })}</span><span class="h-cat__name">${esc(m.label)}${icon('arrow', 'h-cat__go')}</span></a></li>`).join('')}</ul>
 </div>
 </section>`;
 
@@ -149,7 +155,7 @@ ${head('Menu', 'Shop by <span class="accent">category</span>', 'h-cats-h')}
 <div class="band__clip" aria-hidden="true"><span class="h-brands__pool"></span></div>
 <div class="wrap wrap--wide">
 ${head('Brands', 'Brands on the <span class="accent">menu</span>', 'h-brands-h')}
-<ul class="h-brands__grid" role="list">${brands.map((b, i) => `<li class="h-brands__item" data-reveal style="--i:${i}"><a class="h-brand glass glass--lit glass--lift"${linkAttrs(iaHref(b.name))}><span class="h-brand__art" aria-hidden="true">${photo(ctx, must(BRAND_ART[b.name], 'brand art ' + b.name), { cls: 'cut', alt: '', sizes: '(min-width: 768px) 26vw, 50vw' })}</span><span class="h-brand__name">${esc(b.name)}</span><span class="link-arrow h-brand__go">Shop ${esc(b.name)}${icon('arrow')}</span></a></li>`).join('')}</ul>
+<ul class="h-brands__grid" role="list">${brands.map((b, i) => `<li class="h-brands__item" data-reveal style="--i:${i}"><a class="h-brand glass glass--lit glass--lift"${linkAttrs(iaHref(b.name))}><span class="h-brand__art" aria-hidden="true">${photo(ctx, must(BRAND_ART[b.name], 'brand art ' + b.name), { cls: 'cut', alt: '', sizes: '(max-width: 720px) 27vw, (min-width: 768px) 26vw, 50vw' })}</span><span class="h-brand__name">${esc(b.name)}</span><span class="link-arrow h-brand__go">Shop ${esc(b.name)}${icon('arrow')}</span></a></li>`).join('')}</ul>
 </div>
 </section>`;
 
@@ -165,7 +171,7 @@ ${head('Brands', 'Brands on the <span class="accent">menu</span>', 'h-brands-h')
   const flowerProducts = products.filter((p) => p.category === 'flower');
   // [data-tilt] sits on a wrapper: .pcard:hover sets its own transform and would cancel the tilt on the same element
   const pcard = (p, i) => `<div class="h-tilt" data-tilt data-reveal style="--i:${i}"><article class="pcard h-pcard">
-<div class="pcard__media">${photo(ctx, p.photo, { cls: 'cut', sizes: '(min-width: 1024px) 26vw, (min-width: 768px) 40vw, 46vw' })}</div>
+<div class="pcard__media">${photo(ctx, p.photo, { cls: 'cut', sizes: '(max-width: 720px) 39vw, (min-width: 1024px) 26vw, (min-width: 768px) 40vw, 46vw' })}</div>
 <h3 class="pcard__name"><a${linkAttrs('/shop/' + p.category + '/')}>${p.nameLines.map((l) => `<span>${esc(l)}</span>`).join(' ')}</a></h3>
 <p class="pcard__price">${esc(p.price)}</p>
 <a class="pcard__add"${linkAttrs('/shop/')} data-demo-add aria-label="${escA('Add ' + p.name)}">${icon('plus')}</a>
@@ -173,7 +179,7 @@ ${head('Brands', 'Brands on the <span class="accent">menu</span>', 'h-brands-h')
   const flowersHtml = `<section class="h-flowers band band--void" aria-labelledby="h-flowers-h">
 <div class="wrap wrap--wide">
 <h2 id="h-flowers-h" class="h-vh">${esc(flower.plural)}</h2>
-<div class="h-flowers__banner" data-reveal>${photo(ctx, 'gold-flowers-banner.webp', { alt: '', sizes: '(min-width: 1440px) 1360px, 96vw' })}</div>
+<div class="h-flowers__banner" data-reveal>${photo(ctx, 'gold-flowers-banner.webp', { alt: '', sizes: '(max-width: 720px) 92vw, (min-width: 1440px) 1360px, 96vw' })}</div>
 <div class="h-flowers__row">
 ${flowerProducts.map(pcard).join('\n')}
 <a class="h-flowers__all"${linkAttrs('/shop/' + flower.slug + '/')} data-reveal style="--i:${flowerProducts.length}"><span class="h-flowers__all-t">${esc(flower.viewAll)}</span>${icon('arrow')}</a>
@@ -190,7 +196,7 @@ ${flowerProducts.map(pcard).join('\n')}
 <div class="band__clip" aria-hidden="true"><span class="h-spots__pool"></span></div>
 <div class="wrap wrap--wide h-spots__grid">
 ${SPOT.map((s, i) => { const c = cat(s.slug); return `<article class="h-spot" aria-labelledby="h-spot-${c.slug}" data-reveal style="--i:${i}">
-<div class="h-spot__media">${gimg(s.art, { alt: '', sizes: '(min-width: 1024px) 46vw, 96vw' })}</div>
+<div class="h-spot__media">${gimg(s.art, { alt: '', sizes: '(max-width: 720px) 35vw, (min-width: 1024px) 46vw, 96vw' })}</div>
 <div class="h-spot__body glass glass--lit">
 <p class="kicker">Spotlight</p>
 <h2 id="h-spot-${c.slug}" class="display h-spot__h">${esc(c.plural)}</h2>
@@ -200,7 +206,7 @@ ${SPOT.map((s, i) => { const c = cat(s.slug); return `<article class="h-spot" ar
 </article>`; }).join('\n')}
 </div>
 </section>
-<div class="h-seam h-seam--leaf" aria-hidden="true"><span class="h-seam__art screen"><span class="h-seam__in" data-depth="0.15">${gimg('g-leaf-cut', { alt: '', sizes: '(min-width: 768px) 18vw, 30vw' })}</span></span></div>`;
+<div class="h-seam h-seam--leaf" aria-hidden="true"><span class="h-seam__art screen"><span class="h-seam__in" data-depth="0.15">${gimg('g-leaf-cut', { alt: '', sizes: '(max-width: 720px) 22vw, (min-width: 768px) 18vw, 30vw' })}</span></span></div>`;
 
   // ---------- 8. deals trio: site.json deals, big NATS numbers on yellow-tinted glass ----------
   const dealsHtml = `<section class="h-deals band band--beam" aria-labelledby="h-deals-h">
@@ -240,7 +246,7 @@ ${demoForm({ id: 'h-first-customer-form', fields: fc.fields, button: fc.button, 
 <div class="h-areas__marquee" data-marquee aria-hidden="true">${names}</div>
 <div class="wrap wrap--wide">
 <div class="h-areas__top">${head(site.region, accentLast(site.deliveryAreas.title), 'h-areas-h')}<a class="link-arrow h-areas__all"${linkAttrs(iaHref('All delivery areas'))} data-reveal>${esc('All delivery areas')}${icon('arrow')}</a></div>
-<ul class="h-areas__grid" role="list">${areaList.map((a, i) => `<li data-reveal style="--i:${i % 4}"><a class="h-area glass glass--lift"${linkAttrs(a.path)}>${icon('pin', 'h-area__pin')}<span class="h-area__txt"><span class="h-area__pre">${esc(site.deliveryAreas.prefix)}</span> <span class="h-area__name">${esc(a.name)}</span></span>${icon('arrow', 'h-area__go')}</a></li>`).join('')}</ul>
+<ul class="h-areas__grid" role="list">${areaList.map((a, i) => `<li data-reveal style="--i:${i % 4}"><a class="h-area glass glass--lift"${linkAttrs(a.path)}>${icon('pin', 'h-area__pin')}<span class="h-area__txt"><span class="h-area__pre">${esc(site.deliveryAreas.prefix)}</span> <span class="h-area__name">${esc(a.name).replace(/\//g, '/<wbr>')}</span></span>${icon('arrow', 'h-area__go')}</a></li>`).join('')}</ul>
 </div>
 </section>`;
 
@@ -266,7 +272,7 @@ ${demoForm({ id: 'h-first-customer-form', fields: fc.fields, button: fc.button, 
 <div class="band__clip" aria-hidden="true"><span class="h-guides__pool"></span></div>
 <div class="wrap wrap--wide">
 <div class="h-guides__top">${head(iaLabel('/blog/') || 'Blog', 'Guides', 'h-guides-h')}<a class="link-arrow"${linkAttrs('/blog/')} data-reveal>Read the blog${icon('arrow')}</a></div>
-<ul class="h-guides__grid" role="list">${posts.map((p, i) => `<li data-reveal style="--i:${i}"><a class="h-guide glass glass--lit glass--lift"${linkAttrs(p.href)}><span class="h-guide__media">${gimg(p.image, { alt: '', sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 46vw, 92vw' })}</span><span class="h-guide__body"><span class="h-guide__cat">${esc(p.catLabel)}</span><span class="h-guide__t">${esc(postTitle(p))}</span><span class="h-guide__go">Read${icon('arrow')}</span></span></a></li>`).join('')}</ul>
+<ul class="h-guides__grid" role="list">${posts.map((p, i) => `<li data-reveal style="--i:${i}"><a class="h-guide glass glass--lit glass--lift"${linkAttrs(p.href)}><span class="h-guide__media">${gimg(p.image, { alt: '', sizes: '(max-width: 720px) 33vw, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, 92vw' })}</span><span class="h-guide__body"><span class="h-guide__cat">${esc(p.catLabel)}</span><span class="h-guide__t">${esc(postTitle(p))}</span><span class="h-guide__go">Read${icon('arrow')}</span></span></a></li>`).join('')}</ul>
 </div>
 </section>`;
 

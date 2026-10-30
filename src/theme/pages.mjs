@@ -81,7 +81,8 @@ ${cut}
 </section>`;
 }
 // a client cut-out protruding past the hero's lower seam (decorative: the page text carries the meaning)
-const heroCut = (ctx, file, cls = '') => `<div class="p-hero__cut protrude ${cls}" aria-hidden="true"><div class="p-hero__cut-in" data-depth="0.12">${photo(ctx, file, { alt: '', cls: 'cut p-hero__cut-img', sizes: '(min-width: 1024px) 400px, 170px', eager: true })}</div></div>`;
+// not eager: the hero art behind the text is the page's one eager image (the LCP); phones show the cut at 96 to 104px
+const heroCut = (ctx, file, cls = '') => `<div class="p-hero__cut protrude ${cls}" aria-hidden="true"><div class="p-hero__cut-in" data-depth="0.12">${photo(ctx, file, { alt: '', cls: 'cut p-hero__cut-img', sizes: '(min-width: 1024px) 400px, (max-width: 720px) 104px, 170px' })}</div></div>`;
 
 function band(inner, { tone = 'void', mod = '', id = '', label = '', clip = '' } = {}) {
   return `<section${attrs({ class: `band band--${tone} p-band ${mod}`.trim(), id: id || null, 'aria-labelledby': label || null })}>
@@ -157,7 +158,7 @@ ${hoursList(ctx).map((x, i) => `<div class="stat p-stat" role="listitem" data-re
     const prods = s.products.filter((p) => p.brand === b.name);
     const ph = (prods.find((p) => p.photo) || {}).photo;
     return `<article class="p-brand glass glass--strong glass--lit glass--lift" data-reveal style="--i:${i}">
-<div class="p-brand__media" data-tilt>${ph ? photo(ctx, ph, { cls: 'cut p-brand__img', sizes: '(min-width: 1024px) 300px, 60vw' }) : ''}</div>
+<div class="p-brand__media" data-tilt>${ph ? photo(ctx, ph, { cls: 'cut p-brand__img', sizes: '(min-width: 1024px) 300px, (max-width: 720px) 38vw, 60vw' }) : ''}</div>
 <div class="p-brand__copy"><h3 class="p-brand__name">${esc(b.name)}</h3>
 ${prods.length ? `<ul class="p-brand__list" role="list">${prods.map((p) => `<li><span>${esc(p.name)}</span> <span class="p-brand__price">${esc(p.price)}</span></li>`).join('')}</ul>` : ''}
 ${arrow(brandHref(ctx, b.name), 'Shop ' + b.name)}</div>
@@ -325,7 +326,7 @@ const catOf = (ctx, slug) => ctx.ia.blogCategories.find((c) => c.slug === slug);
 function postCards(ctx, posts) {
   return `<div class="p-posts">${posts.map((p, i) => `<article class="p-post glass glass--lit glass--lift" data-reveal style="--i:${i % 6}">
 <a class="p-post__link"${linkAttrs(p.href)}>
-<span class="p-post__media">${gimg(p.image, { alt: '', sizes: '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw', cls: 'p-post__img' })}</span>
+<span class="p-post__media">${gimg(p.image, { alt: '', sizes: '(min-width: 1024px) 30vw, (min-width: 721px) 45vw, 46vw', cls: 'p-post__img' })}</span>
 <span class="p-post__body"><span class="p-post__cat">${esc((catOf(ctx, p.cat) || {}).label || '')}</span><h3 class="p-post__title">${esc(h1Of(ctx, p.href))}</h3><span class="link-arrow p-post__more">Read the guide${icon('arrow')}</span></span>
 </a>
 </article>`).join('\n')}</div>`;

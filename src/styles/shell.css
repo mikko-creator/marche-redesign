@@ -148,6 +148,12 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 .header-cta { margin-left: 10px; }
 .nav-toggle { display: none; }
 .nav__drawer-head, .nav__drawer-foot { display: none; }
+/* the utility bar's promo line, repeated at the top of the drawer: shown only on phones (mobile.css), where the
+   utility bar folds away */
+.nav__promo { display: none; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 14px 0 6px; padding: 8px 16px; border-radius: var(--r-md); border: 1px solid rgba(255, 209, 0, 0.24); background-color: rgba(255, 209, 0, 0.07); font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; line-height: 1.4; color: var(--bone); }
+.nav__promo-cta { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--sun); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+.nav__promo-cta .ico { width: 14px; height: 14px; }
+.nav__promo-cta:hover { color: var(--sun-hot); }
 
 /* 1024-1279: the same bar, tighter, so every item fits */
 @media (min-width: 1024px) and (max-width: 1279.98px) {

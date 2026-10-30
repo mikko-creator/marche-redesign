@@ -57,7 +57,8 @@ The palms and the doorstep are generic mood. They are never captioned as a place
 ## The hero loop
 
 `assets/media/hero-model.mp4` (1920x1080) and `assets/media/hero-model-sm.mp4` (a 720x1080 portrait crop for
-phones), poster `assets/media/hero-model.jpg` (the first frame): a 5-second slow-motion loop of an adult model in
+phones), posters `assets/media/hero-model.jpg` and, for phones, `assets/media/hero-model-sm.jpg` (each file's first
+frame, AI-labelled in its XMP): a 5-second slow-motion loop of an adult model in
 yellow mirrored shield sunglasses and black cyberpunk techwear, exhaling a plume of smoke from a joint through one warm
 golden key light, with distant amber and teal city lights. The key frame was generated at 4K and animated with the same frame as
 its first and last frame. That clip slowed almost to a stop at both ends, so it was retimed to one constant motion speed

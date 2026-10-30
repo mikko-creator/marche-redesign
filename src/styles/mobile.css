@@ -53,7 +53,7 @@
   .btn--sm { min-height: 44px; }
   .btn-row .btn { flex: 0 1 auto; }
   .chip { min-height: 44px; padding: 0 16px; }
-  .link-arrow { min-height: 44px; }
+  .link-arrow { min-height: 44px; text-wrap: balance; } /* a two-line label breaks at a space ("VIEW ALL / PRE-ROLLS"), not its hyphen */
   .crumbs a { min-height: 44px; }
   .crumbs li { font-size: 0.8125rem; }
   .footer__links a, .footer__legal-links a { min-height: 44px; }
@@ -98,4 +98,41 @@
 @media (hover: none) {
   .pcard:hover { transform: none; }
   .pcard:hover .pcard__media .cut { transform: none; filter: var(--rim-sun) var(--shadow-cut); }
+}
+
+/* ---------- phones, mobile pass 2026-10-30 (SHELL lane): first screen, tap targets, glass policy, rhythm. Every rule
+   sits inside this query, so desktop and tablet render exactly as before. ---------- */
+@media (max-width: 720px) {
+  /* 1. Chrome: the promo line folds into the drawer (shell.mjs prints it there as .nav__promo), so the first screen
+     starts with the 64 px main bar, the only thing that stays on screen while scrolling. */
+  :root { --utility-h: 0px; --section-y: clamp(40px, 11vw, 60px); }
+  .utility { display: none; }
+  .nav__promo { display: flex; }
+
+  /* 2. Tap targets of at least 44 x 44 px (padding and min sizes, never bigger type) */
+  .brand { min-height: 44px; padding-block: 0; }
+  .crumbs a { min-width: 44px; }
+  .footer__links a, .footer__legal-links a { min-width: 44px; min-height: 44px; }
+
+  /* 3. Glass policy: on phones a pane is an opaque smoked fill with its lit edge, not a live blur (a blur per card
+     costs a GPU layer each while scrolling). Kept frosted: the header, the drawer, the mega panels inside it, the
+     21+ gate and dialogs. A lane keeps ONE hero pane frosted with a more specific selector of its own. */
+  .glass { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(16, 16, 16, 0.92); }
+  .glass--strong { background-color: rgba(10, 10, 10, 0.94); }
+  .btn--glass { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(30, 30, 30, 0.92); }
+  .mega__panel.glass { background-color: rgba(255, 255, 255, 0.03); }
+  .age-gate__card.glass, [role="dialog"].glass { background-color: rgba(8, 8, 8, 0.82); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)); backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)); }
+
+  /* 4. Shorter pages: the shared rhythm (the section token above), the breadcrumb bar and the footer */
+  .crumbs-bar { padding-block: 2px; }
+  .site-footer { padding-top: 40px; }
+  .footer__top { gap: 20px; padding-bottom: 28px; }
+  .footer__brand { gap: 12px; }
+  .footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-block: 28px; }
+  .footer__h { margin-bottom: 6px; }
+  .footer__links a { line-height: 1.3; }
+  .footer__hours { margin-top: 14px; }
+  .footer__legal { gap: 6px; padding-block: 14px; }
+  .footer__legal-links { gap: 0 18px; }
+  .footer__mark { margin-top: 0; }
 }

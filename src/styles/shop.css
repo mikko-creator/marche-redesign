@@ -219,6 +219,82 @@
   .s-rhero__cut { right: 12px; bottom: -34px; width: 96px; }
 }
 
+/* phones, compact pass: shorter pages, no blur on SHOP cards, 44px taps */
+@media (max-width: 760px) {
+  .s-page main { --section-y: 44px; }
+  /* cards and panels: an opaque smoked fill instead of backdrop-filter (tints from .glass--sun / --rose stay on top) */
+  .s-page main .glass, .s-page main .btn--glass { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .s-page main .glass { background-color: rgba(16, 16, 16, 0.92); }
+  .s-band-head { margin-bottom: 18px; }
+  .s-note { margin-top: 10px; }
+
+  /* /shop/ hero */
+  .s-hero { padding-bottom: 100px; }
+  .s-hero__cut { bottom: -30px; width: 140px; }
+  .s-search { margin: 14px 0 12px; }
+  .s-menu { padding-top: 52px; }
+
+  /* /shop/ sections: products two to a row, compact category cards */
+  .s-sec { padding-block: 26px; }
+  .s-sec__head { margin-bottom: 14px; }
+  .s-sec__more { margin-top: 16px; }
+  .s-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .s-grid .pcard { padding: 12px 12px 16px; }
+  .s-grid .pcard__media { margin: -2px -2px 10px; }
+  .s-grid .pcard__name { font-size: 1.35rem; padding-right: 0; }
+  .s-grid .pcard__price { padding-top: 10px; padding-right: 50px; }
+  .s-grid .pcard__add { right: 10px; bottom: 10px; }
+  .s-catcard__art { aspect-ratio: 2 / 1; }
+  .s-catcard__cut { top: 8px; width: 96px; }
+  .s-catcard__body { margin-top: -24px; padding: 0 18px 18px; }
+  .s-catcard__line { margin: 6px 0 12px; font-size: 1rem; }
+
+  /* brands + all categories */
+  .s-brands__list { gap: 12px; }
+  .s-brand { gap: 12px; padding: 16px; }
+  .s-brand__name { margin: 4px 0 10px; }
+  .s-all__list { margin-top: 16px; }
+  .s-tile { aspect-ratio: 16 / 10; }
+
+  /* category + deals heroes */
+  .s-cathero__art, .s-dhero__art { height: 58vw; }
+  .s-cathero__in, .s-dhero__in { padding-top: 34vw; }
+  .s-cathero__lede, .s-dhero__lede { margin-bottom: 18px; }
+  .s-cathero--flower, .s-cathero--pre-rolls { padding-bottom: 80px; }
+  .s-cathero__cut { bottom: -28px; width: 112px; }
+  .s-after-cut { padding-top: calc(var(--section-y) + 16px); }
+
+  /* guide, empty state, law, keep exploring */
+  .s-guide__in { gap: 20px; }
+  .s-guide__h { margin: 6px 0 12px; }
+  .s-guide__aside { padding: 18px; }
+  .s-empty { padding: 20px 18px; }
+  .s-law__list { gap: 10px; }
+  .s-law__item { padding: 16px 18px; }
+  .s-law__src a { display: inline-flex; align-items: center; min-height: 44px; }
+  .s-law__meta { margin-top: 14px; }
+  .s-more__grid { gap: 10px; }
+  .s-more__card { min-height: 0; padding: 18px 56px 18px 18px; }
+  .s-more__card > .s-ico { top: 18px; right: 18px; }
+  .s-more__cats { margin-top: 20px; }
+
+  /* deals (every card keeps the same look) */
+  .s-deals__list, .s-offers__grid { gap: 12px; }
+  .s-deal { padding: 0 16px 18px; }
+  .s-deal__art { aspect-ratio: 2 / 1; }
+  .s-deal__h { margin: -28px 0 14px; }
+  .s-offer { padding: 20px 18px; }
+  .s-offers__cta { margin-top: 18px; }
+
+  /* rewards */
+  .s-rhero { padding-bottom: 80px; }
+  .s-rhero__in { gap: 20px; }
+  .s-rhero__cut { bottom: -28px; width: 84px; }
+  .s-rhero__form, .s-first__form, .s-insider__form { padding: 18px; }
+  .s-first__in, .s-insider__in { gap: 18px; }
+  .s-insider__h { margin: 6px 0 10px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .s-tile__img { transition: none; }
   .s-tile:hover .s-tile__img, .s-tile:focus-visible .s-tile__img { transform: none; }

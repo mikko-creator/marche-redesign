@@ -226,3 +226,107 @@
 @media (pointer: coarse), (max-width: 639px) {
   .p-src__link, .p-more .link-arrow, .p-legal__more .link-arrow, .p-faq__foot a, .p-head--row .link-arrow { display: inline-flex; align-items: center; min-height: 44px; }
 }
+
+/* ---------- phone pass (2026-10-30, operator: "optimize mobile"). Everything here sits inside this query, so the
+   desktop is untouched. Tighter vertical rhythm, smaller hero protrusions, 2-column grids for the small cards, and
+   opaque smoked panes instead of backdrop blur (GPU): on phones only the header, drawer, megas and dialogs blur. */
+@media (max-width: 720px) {
+  /* rhythm */
+  .p-band { padding-block: 44px; }
+  .p-head { margin-bottom: 20px; }
+  .p-head__title { margin-top: 6px; }
+  .p-head__intro { margin-top: 10px; }
+  .p-more { margin-top: 14px; gap: 0 24px; }
+
+  /* hero: less empty ground, a smaller cut-out crossing the seam */
+  .p-hero { padding-block: 10px 36px; }
+  .p-hero--cut { padding-bottom: 70px; }
+  .p-hero--cut + .band { padding-top: 60px; }
+  .p-hero__crumbs { margin-bottom: 2px; }
+  .p-hero__crumbs .crumbs a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+  .p-hero__title { margin: 8px 0 12px; }
+  .p-hero__ctas { margin-top: 18px; }
+  .p-hero__cut { right: 12px; bottom: -30px; width: 104px; }
+  .p-hero__cut--faq, .p-hero__cut--events { width: 96px; }
+  .p-hero .btn--glass { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(22, 22, 22, 0.92); }
+
+  /* panes: opaque smoked fill, no backdrop blur (tinted panes keep their gradient over the fill) */
+  .p-band .glass { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(16, 16, 16, 0.92); }
+  .p-band .btn--glass { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(22, 22, 22, 0.92); }
+
+  /* about */
+  .p-stats { row-gap: 18px; column-gap: 14px; }
+  .p-stat { gap: 6px; padding-top: 14px; }
+  .p-stat__num { font-size: 2.6rem; }
+  .p-stat__num--time { font-size: 1.75rem; }
+  .p-cats { gap: 10px; }
+  .p-cat__media { aspect-ratio: 16 / 10; }
+  .p-cat__body { gap: 4px; padding: 10px 12px 12px; }
+  .p-cat__name { font-size: 1.3rem; }
+  .p-brands { gap: 36px; padding-top: 24px; }
+  .p-brand { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: center; gap: 14px; padding: 18px 16px; }
+  .p-brand__media { max-width: none; }
+  .p-brand__img { margin-top: -40px; }
+  .p-brand__name { margin-bottom: 8px; }
+  .p-brand__list { margin-bottom: 4px; gap: 4px; }
+  .p-deals { gap: 10px; }
+  .p-deal, .p-offer { padding: 16px 18px; }
+  .p-deal__big { font-size: 2.6rem; }
+  .p-offer { gap: 4px; }
+  .p-offer__ico { width: 24px; height: 24px; }
+
+  /* contact */
+  .p-contact { gap: 28px; }
+  .p-contact .p-head { margin-bottom: 16px; }
+  .p-hours { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 10px; }
+  .p-hours__item { padding: 14px; }
+  .p-hours__ico, .p-address__ico { width: 24px; height: 24px; }
+  .p-hours__label { margin: 8px 0 4px; }
+  .p-hours__value { font-size: 1.5rem; }
+  .p-address { gap: 12px; padding: 16px; }
+  .p-contact__form, .p-apply__form { padding: 20px 16px; }
+  .p-form__title { margin-bottom: 12px; }
+
+  /* faq */
+  .p-faq { gap: 30px; }
+  .p-faq__title { margin-bottom: 8px; }
+  .p-cta { gap: 16px; padding: 22px 18px; }
+
+  /* events + careers */
+  .p-empty { padding: 26px 18px; }
+  .p-empty__ico { width: 32px; height: 32px; }
+  .p-empty__title { margin: 8px 0 6px; }
+  .p-insider { gap: 18px; padding: 22px 18px; }
+  .p-insider__title { margin: 6px 0 8px; }
+  .p-apply { gap: 20px; }
+  .p-apply__title { margin: 6px 0 10px; }
+
+  /* blog: two cards per row */
+  .p-posts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .p-post__media { aspect-ratio: 4 / 3; }
+  .p-post__body { gap: 6px; padding: 10px 12px 12px; }
+  .p-post__cat { font-size: 0.8125rem; letter-spacing: 0.08em; }
+  .p-post__title { font-size: 1.15rem; line-height: 1.05; overflow-wrap: anywhere; }
+  .p-post__more { padding-top: 2px; font-size: 0.8125rem; }
+  .p-head--row { gap: 4px; }
+
+  /* laws + medical card */
+  .p-facts { gap: 10px; }
+  .p-fact { gap: 12px; padding: 16px 16px 14px; }
+  .p-fact__n { font-size: 1.9rem; }
+  .p-fact__text { font-size: 1rem; line-height: 1.55; }
+  .p-src { margin-top: 2px; }
+  .p-law__meta { margin-top: 18px; }
+  .p-state__media { aspect-ratio: 16 / 9; }
+  .p-state__body { gap: 8px; padding: 18px; }
+  .p-advice--hub { margin-top: 14px; }
+
+  /* legal */
+  .p-legal { padding: 22px 18px; }
+  .p-legal__more { margin-top: 12px; gap: 0 24px; }
+
+  /* an arrow label INSIDE a card link is not a tap target of its own (the whole card is), so it drops the 44px
+     minimum the stand-alone arrow links keep; faq questions keep a 52px row */
+  .p-cat .p-cat__more, .p-post .p-post__more, .p-state .link-arrow { min-height: 0; }
+  .p-faq .faq summary { min-height: 52px; padding-block: 12px; }
+}

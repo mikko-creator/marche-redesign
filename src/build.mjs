@@ -8,6 +8,7 @@ import path from 'node:path';
 import { ROOT } from './lib/paths.mjs';
 import { loadAll } from './lib/data.mjs';
 import { scanGenerated, writeVariants, imageErrors } from './lib/images.mjs';
+import { minifyCss } from './lib/minify-css.mjs';
 import { MODULES } from './theme/index.mjs';
 import { CSS_ORDER } from './theme/shell.mjs';
 
@@ -39,7 +40,7 @@ function copyDir(src, dst, filter = () => true) {
 // ---------- static assets ----------
 const cssFiles = CSS_ORDER.filter((f) => fs.existsSync(path.join(ROOT, 'src/styles', f + '.css')));
 fs.mkdirSync(path.join(OUT, 'assets/css'), { recursive: true });
-for (const f of cssFiles) fs.copyFileSync(path.join(ROOT, 'src/styles', f + '.css'), path.join(OUT, 'assets/css', f + '.css'));
+for (const f of cssFiles) fs.writeFileSync(path.join(OUT, 'assets/css', f + '.css'), minifyCss(fs.readFileSync(path.join(ROOT, 'src/styles', f + '.css'), 'utf8')));
 const extraCss = fs.readdirSync(path.join(ROOT, 'src/styles')).filter((f) => f.endsWith('.css') && !CSS_ORDER.includes(f.replace(/\.css$/, '')));
 if (extraCss.length) console.warn('warning: stylesheets not in CSS_ORDER are not linked: ' + extraCss.join(', '));
 fs.mkdirSync(path.join(OUT, 'assets/js'), { recursive: true });

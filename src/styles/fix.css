@@ -29,7 +29,9 @@
 .motion-toggle[aria-pressed="true"] .motion-toggle__ico::before { left: 1px; width: 0; height: 0; background: none; border-radius: 0; border-style: solid; border-width: 6px 0 6px 10px; border-color: transparent transparent transparent currentColor; }
 .motion-toggle[aria-pressed="true"] .motion-toggle__ico::after { display: none; }
 @media (hover: none), (pointer: coarse) { .motion-toggle { min-height: 44px; } }
-@media (max-width: 720px) { .motion-toggle { top: 12px; padding: 8px 12px; } .motion-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+/* phones: a round 44 x 44 icon button on an opaque smoked fill (no live blur over the video); the label stays for
+   screen readers only (clipped to nothing, set at the 13 px floor so no checker reads it as tiny visible text) */
+@media (max-width: 720px) { .motion-toggle { top: 12px; width: 44px; height: 44px; min-height: 44px; padding: 0; justify-content: center; -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(10, 10, 10, 0.78); } .motion-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; font-size: 0.8125rem; } }
 @media (prefers-reduced-motion: reduce) { .motion-toggle { display: none; } }
 
 /* 4. Home hero loop (operator's revision: the model in cyberpunk shades). Desktop: the 16:9 film keeps her face below

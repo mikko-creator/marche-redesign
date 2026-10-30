@@ -21,6 +21,10 @@
 }
 .h-hero__clip > .band__bg { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 72% 46%; border-radius: 0; }
 .h-hero__film > img, .h-hero__film > video { position: absolute; inset: 0; }
+/* the poster inside its <picture> (phones get the phone frame): the box drops out, the img keeps the desktop look the
+   bare img had (components .band__bg > img + fix.css 4) */
+.h-hero__film > picture { display: contents; }
+.h-hero__film > picture > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .h-hero__scrim { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 32%, rgba(0, 0, 0, 0.16) 60%, rgba(0, 0, 0, 0) 78%), linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 32%); }
 .h-hero .h-hero__pool { background-image: radial-gradient(44% 66% at var(--lx, 70%) var(--ly, 40%), rgba(255, 209, 0, 0.3) 0%, rgba(255, 170, 0, 0.1) 40%, rgba(0, 0, 0, 0) 72%); mix-blend-mode: screen; }
 .h-hero__beam { position: absolute; inset: 0; background-image: var(--light-beam); opacity: 0.7; mix-blend-mode: screen; }
@@ -239,6 +243,110 @@
   .h-area { gap: 8px; padding: 12px; min-height: 60px; }
   .h-area__go { display: none; }
   .h-area__name { font-size: 1.35rem; }
+}
+
+/* ---------- phones, mobile pass 2026-10-30: every rule sits inside this query, so desktop and tablet render as
+   before. A shorter page without dropping a word or a link: tighter rhythm, compact two-column and side-by-side
+   cards, smaller protrusions; opaque smoked panes instead of a live blur per card, except the hero promo strip over
+   the film (the page's one frosted pane). ---------- */
+@media (max-width: 720px) {
+  .h-hours__panel, .h-cat, .h-brand, .h-spot__body, .h-deal, .h-reward, .h-area, .h-guide, .h-insider__pane { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgba(16, 16, 16, 0.92); }
+  .h-hero .h-promos.glass { background-color: var(--glass-bg); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)); backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)); }
+  .h-head { margin-bottom: 20px; }
+  .h-deals__top, .h-areas__top, .h-guides__top { gap: 8px 20px; margin-bottom: 20px; }
+
+  /* 1. hero: the phone frame framed like the phone video (fix.css 4), a shorter product stage */
+  .h-hero { --h-protrude: 30px; padding-top: 16px; }
+  .h-hero__film > picture > img { object-position: 35% 50%; }
+  .h-hero__stage { min-height: 150px; }
+  .h-hero__prod--a { width: 44vw; }
+  .h-hero__prod--b { width: 34vw; }
+
+  /* 2. hours */
+  .h-hours { padding-top: 48px; padding-bottom: 20px; }
+  .h-hours__panel { gap: 10px; padding: 16px 18px; }
+  .h-hours__list { gap: 10px 28px; }
+  .h-hours__value { font-size: 2rem; }
+
+  /* 3. categories: two across, wider crops */
+  .h-cats { padding-top: var(--section-y); }
+  .h-cats__grid { gap: 8px; }
+  .h-cat { gap: 8px; padding: 6px 6px 12px; }
+  .h-cat__media { aspect-ratio: 4 / 3; }
+
+  /* 4. brands: two across, the cut-out still steps out of the top of its pane */
+  .h-brands__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 40px; }
+  .h-brand { min-height: 0; gap: 4px; padding: 88px 14px 8px; }
+  .h-brand__art { left: 20%; right: auto; top: -30px; width: 60%; }
+  .h-brand__name { font-size: 1.5rem; }
+
+  /* 5. statement */
+  .h-statement { padding-block: 36px; }
+
+  /* 6. flowers: the two product cards side by side, the add button on the photo's corner */
+  .h-flowers__banner { margin-bottom: 14px; }
+  .h-flowers__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .h-flowers__all { grid-column: 1 / -1; min-height: 60px; padding: 10px 18px; }
+  .h-flowers__all-t { font-size: 1.6rem; }
+  .h-flowers .h-pcard { padding: 10px 12px 14px; }
+  .h-flowers .pcard__media { margin: 0 0 8px; }
+  .h-flowers .pcard__name { padding-right: 0; font-size: 1.1rem; line-height: 1.05; }
+  .h-flowers .pcard__price { padding-top: 8px; padding-right: 0; font-size: 1.2rem; }
+  .h-flowers .pcard__add { top: 8px; right: 8px; bottom: auto; width: 44px; height: 44px; }
+
+  /* 7. spotlights: photo beside the pane instead of above it */
+  .h-spots__grid { gap: 12px; }
+  .h-spot { flex-direction: row; align-items: stretch; }
+  .h-spot__media { flex: 0 0 38%; aspect-ratio: auto; border-radius: var(--r-lg) 0 0 var(--r-lg); }
+  .h-spot__media > img, .h-spot__media > .img-slot { object-position: 60% 50%; }
+  .h-spot__body { flex: 1; min-width: 0; margin: 0; padding: 16px; border-radius: 0 var(--r-lg) var(--r-lg) 0; }
+  .h-spot__body .kicker { margin-bottom: 6px; }
+  .h-spot .h-spot__h { font-size: 1.75rem; }
+  .h-spot .h-spot__p { margin: 6px 0; }
+  .h-seam__art { width: 84px; top: -64px; right: 8px; }
+
+  /* 8. deals */
+  .h-deals__grid { gap: 10px; }
+  .h-deal { gap: 4px; padding: 16px 48px 16px 20px; }
+  .h-deal__big { font-size: 2.9rem; }
+  .h-deal__what { padding-top: 2px; padding-right: 0; }
+  .h-deal__go { right: 18px; bottom: 18px; }
+
+  /* 9. rewards: the icon moves into the pane's corner */
+  .h-rewards__grid { gap: 12px; }
+  .h-reward { gap: 10px; padding: 20px 18px; }
+  .h-reward__ico { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; }
+  .h-reward .h-reward__h, .h-reward .kicker { padding-right: 52px; }
+  .h-reward .h-reward__h { font-size: 1.9rem; }
+
+  /* 10. delivery areas: the decorative pin steps aside (as on the hub tiles) so "Weed delivery in" holds one line and
+     the longest name, LAX/WESTCHESTER, fits the two-column tile; below that width it breaks after its slash (<wbr>) */
+  .h-areas__marquee { margin-bottom: 20px; }
+  .h-areas__name { font-size: 2.3rem; }
+  .h-areas__grid { gap: 8px; }
+  .h-area { gap: 6px; min-height: 56px; padding: 10px 12px; }
+  .h-area__pin { display: none; }
+  .h-area__pre { text-wrap: balance; }
+  .h-area__name { font-size: 1.1rem; overflow-wrap: anywhere; }
+
+  /* 11. top products */
+  .h-top { padding-block: 32px; }
+  .h-top__list { gap: 8px; }
+  .h-top__chip { min-height: 44px; }
+
+  /* 12. guides: thumbnail beside the text */
+  .h-guides__grid { gap: 10px; }
+  .h-guide { flex-direction: row; }
+  .h-guide__media { flex: 0 0 36%; aspect-ratio: auto; min-height: 118px; border-radius: var(--glass-r) 0 0 var(--glass-r); }
+  .h-guide__body { min-width: 0; gap: 4px; padding: 14px 16px; }
+  .h-guide__go { padding-top: 4px; }
+
+  /* 13. insider */
+  .h-insider__inner { gap: 18px; }
+  .h-insider__pane { padding: 18px; }
+}
+@media (max-width: 379.98px) {
+  .h-area__name { font-size: 1rem; }
 }
 
 /* ---------- reduced motion: the loop is hidden (the poster stays), the ribbon stands still ---------- */
