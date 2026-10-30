@@ -132,7 +132,7 @@ function about(ctx) {
   const A = areas(ctx);
   const h = hero(ctx, {
     crumbs, kick: 'About', title: `About <span class="accent">${esc(s.name)}</span>`,
-    lede: `${esc(t[0])} ${esc(t[1])}, ${esc(fast(ctx))} - across the ${esc(s.region)}.`,
+    lede: `${esc(t[0])} ${esc(t[1])}, ${esc(fast(ctx))}, across the ${esc(s.region)}.`,
     ctas: [btn(ctx.ia.cta.href, ctx.ia.cta.label), btn('/dispensaries/', s.deliveryAreas.title, 'btn--glass')],
     bg: 'g-gold-dust', cut: heroCut(ctx, 'watermelon-sherbet.webp', 'p-hero__cut--about'), mod: 'p-hero--about',
   });
@@ -197,7 +197,7 @@ ${band(`<div class="wrap p-contact">
 <div class="p-contact__info">
 ${secHead('contact-hours', 'Hours', `Delivery <span class="accent">and pick-up</span>`)}
 <div class="p-hours">${hoursCards(ctx)}</div>
-<div class="p-address glass glass--strong glass--lit" data-reveal>${icon('pin', 'p-address__ico')}<div><h3 class="p-address__title">Address</h3><p class="p-address__line">${esc(s.contact.address.line)}</p><p class="p-address__note">Address shown as in the brand mockup - to be confirmed</p></div></div>
+<div class="p-address glass glass--strong glass--lit" data-reveal>${icon('pin', 'p-address__ico')}<div><h3 class="p-address__title">Address</h3><p class="p-address__line">${esc(s.contact.address.line)}</p><p class="p-address__note">Address shown as in the brand mockup, to be confirmed</p></div></div>
 </div>
 <div class="p-contact__form glass glass--strong glass--lit" data-reveal style="--i:1"><h2 class="display p-form__title" id="contact-message">Send <span class="accent">a message</span></h2>${form}</div>
 </div>`, { tone: 'lit', mod: 'p-band--contact', label: 'contact-hours', clip: pool('p-pool--left') })}
@@ -224,7 +224,7 @@ function faq(ctx) {
     { id: 'delivery', title: 'Delivery & pick-up', items: [
       { q: 'What are your delivery hours?', a: `<p>${esc(s.hours.delivery.label)}: ${esc(s.hours.delivery.value)}.</p>` },
       { q: 'What are your pick-up hours?', a: `<p>${esc(s.hours.pickup.label)}: ${esc(s.hours.pickup.value)}.</p><p>${a('/contact/', 'Contact and pick-up')}</p>` },
-      { q: 'How fast is delivery?', a: `<p>${esc(t[0])} ${esc(t[1])} - ${esc(fast(ctx))}.</p>` },
+      { q: 'How fast is delivery?', a: `<p>${esc(t[0])} ${esc(t[1])}, ${esc(fast(ctx))}.</p>` },
       { q: 'Where do you deliver?', a: `<p>${esc(s.name)} delivers in the ${esc(s.region)}: ${list(A.map((x) => a(x.path, x.name)))}.</p><p>${a('/dispensaries/', 'All delivery areas')}</p>` },
     ] },
     { id: 'menu', title: 'Menu & offers', items: [
@@ -350,7 +350,7 @@ function blogHub(ctx) {
   }).join('\n');
   return out(ctx, {
     path, name: 'Blog', mod: 'blog', crumbs, main: `${h}\n${groups}`,
-    description: `${ctx.site.name} blog: ${ctx.ia.blogCategories.map((c) => c.label.toLowerCase()).join(', ')} - guides to every category on the menu, delivery in the ${ctx.site.region} and California cannabis law.`,
+    description: `${ctx.site.name} blog: ${ctx.ia.blogCategories.map((c) => c.label.toLowerCase()).join(', ')}. Guides to every category on the menu, delivery in the ${ctx.site.region} and California cannabis law.`,
   });
 }
 const CAT_BG = { 'product-guides': 'g-bud-key', delivery: 'g-palms-night', 'laws-and-medical': 'g-apothecary' };
@@ -373,7 +373,7 @@ function blogCat(ctx, c) {
 ${band(`<div class="wrap"><header class="p-head" data-reveal>${kicker(c.label)}<h2 class="display p-head__title" id="blog-list">${posts.length} <span class="accent">${posts.length === 1 ? 'guide' : 'guides'}</span></h2></header>${postCards(ctx, posts)}<p class="p-more">${arrow('/blog/', 'All guides')}</p></div>`, { tone: 'lit', mod: 'p-band--posts', label: 'blog-list', clip: pool('p-pool--left') })}`;
   return out(ctx, {
     path, name: `${c.label} | Blog`, mod: 'blogcat', crumbs, main,
-    description: `${ctx.site.name} blog - ${c.label}: ${posts.map((p) => h1Of(ctx, p.href)).join(', ')}.`,
+    description: `${c.label} guides from the ${ctx.site.name} blog: ${posts.map((p) => h1Of(ctx, p.href)).join(', ')}.`,
   });
 }
 

@@ -376,7 +376,7 @@ function dealsPage(ctx) {
   const fc = s.firstCustomer;
   const ref = s.referral;
   const cards = s.deals.map((d, i) => {
-    const ember = i % 2 === 1;
+    const ember = false; // every deal card shares one look (operator, 2026-10-30)
     return `<li class="s-deal glass glass--sun glass--lit glass--lift" data-reveal style="--i:${i}">
 <div class="s-deal__art" aria-hidden="true">${dealArt(ctx, d)}</div>
 <h3 class="s-deal__h">${d.brandLine ? `<span class="s-deal__brand">${esc(d.brandLine)}</span> ` : ''}<span class="s-deal__ticket${ember ? ' s-deal__ticket--ember' : ''}"><span class="s-deal__big">${esc(d.big)}</span>${d.small ? ` <span class="s-deal__small">${esc(d.small)}</span>` : ''}</span> <span class="s-deal__what">${esc(d.what)}</span></h3>

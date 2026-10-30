@@ -388,7 +388,7 @@
     var t = e.target.closest ? e.target.closest('[data-demo-add]') : null;
     if (!t) return;
     e.preventDefault();
-    showToast(t.getAttribute('data-demo-add') || 'Preview menu - ordering connects at launch.');
+    showToast(t.getAttribute('data-demo-add') || 'Preview menu: ordering connects at launch.');
   });
 
   /* ---------------- decorative background video: a visible pause / play toggle (WCAG 2.2.2) ----------------

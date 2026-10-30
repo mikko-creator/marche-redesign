@@ -55,7 +55,7 @@ export const areas = (ctx) => ctx.site.deliveryAreas.areas.map((a) => ({ ...a, p
 
 // Preview forms are NOT wired to any service: every form renders with data-demo-form; site.js stops the submit and
 // shows the inline note. Use demoForm() for every form so the wording stays one sentence site-wide.
-export const DEMO_NOTE = 'This preview form is not connected yet - nothing is sent.';
+export const DEMO_NOTE = 'This preview form is not connected yet, so nothing is sent.';
 export function demoForm({ id = '', fields = [], button = 'Submit', cls = '' } = {}) {
   return `<form class="demo-form ${cls}" data-demo-form novalidate${id ? ` id="${escA(id)}"` : ''}>
 ${fields.map((f, i) => { const name = slugify(f); const type = /email/i.test(f) ? 'email' : /zip/i.test(f) ? 'text' : 'text'; return `<label class="demo-form__field"><span class="demo-form__label">${esc(f)}</span><input class="demo-form__input" type="${type}" name="${name}" autocomplete="${/email/i.test(f) ? 'email' : /zip/i.test(f) ? 'postal-code' : /name/i.test(f) ? 'name' : 'off'}"${/zip/i.test(f) ? ' inputmode="numeric"' : ''}></label>`; }).join('\n')}

@@ -1,6 +1,6 @@
 {
   "_note": "The adopted architecture (a large multi-state dispensary operator's site, captured 2026-10-23/27) mapped onto Marche: utility bar, nav order, the three mega menus, footer columns, page types and URL patterns. Labels are Marche's own words where the Figma has them. Never name the adopted site anywhere public.",
-  "promo": { "text": "Get 25% off - first customer", "cta": "Shop latest deals", "href": "/dispensaries/california/deals/" },
+  "promo": { "text": "Get 25% off as a first customer", "cta": "Shop latest deals", "href": "/dispensaries/california/deals/" },
   "utility": {
     "pickup": { "label": "Pick up at", "value": "Marche", "href": "/contact/", "note": "Pick-up 8 AM - 10 PM" },
     "delivery": { "label": "Want delivery?", "href": "/dispensaries/california/" },

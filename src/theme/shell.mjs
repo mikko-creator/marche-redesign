@@ -144,7 +144,7 @@ function footerHtml(ctx) {
     if (c.contact) {
       return `<div class="footer__col footer__col--contact"><h2 class="footer__h">${esc(c.title)}</h2>
 <address class="footer__addr">${icon('pin')}<span>${esc(s.contact.address.line)}</span></address>
-<p class="footer__flag">Address shown as in the brand mockup - to be confirmed</p>
+<p class="footer__flag">Address shown as in the brand mockup, to be confirmed</p>
 <ul class="footer__hours">
 <li>${icon('truck')}<span>${esc(h.delivery.label)}</span><strong>${esc(h.delivery.value)}</strong></li>
 <li>${icon('bag')}<span>${esc(h.pickup.label)}</span><strong>${esc(h.pickup.value)}</strong></li>
@@ -189,7 +189,7 @@ ${logoImg('', 'age-gate__logo')}
 <h2 class="age-gate__q" id="age-gate-q">Are you 21 or older?</h2>
 <p class="age-gate__d" id="age-gate-d">Please confirm your age to enter.</p>
 <div class="btn-row age-gate__actions"><button class="btn btn--sun" type="button" data-age-yes>Yes</button><button class="btn btn--ghost" type="button" data-age-no>No</button></div>
-<p class="age-gate__no" data-age-msg hidden role="status">Sorry - this site is for adults 21 and older.</p>
+<p class="age-gate__no" data-age-msg hidden role="status">Sorry, this site is for adults 21 and older.</p>
 </div>
 </div>`;
 }

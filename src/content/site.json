@@ -6,47 +6,177 @@
   "ageGateKey": "marche-age-ok",
   "region": "South Bay, Los Angeles",
   "tagline": {
-    "lines": ["Weed Delivery", "At Your Door", "45 Minutes or Less"],
+    "lines": [
+      "Weed Delivery",
+      "At Your Door",
+      "45 Minutes or Less"
+    ],
     "source": "Figma 519:2 'Marche Website - 5' (UPDATED mockup), y 6829-7012"
   },
   "hours": {
-    "delivery": { "label": "Delivery", "value": "12 PM - 10 PM", "source": "Figma 519:2 y 869/998" },
-    "pickup": { "label": "Pick-up", "value": "8 AM - 10 PM", "source": "Figma 519:2 y 869/998" },
-    "footerWeekly": { "value": "Monday - Saturday: XX am-XX pm / Sunday: XX am- XX pm", "status": "unconfirmed", "why": "placeholder XX values in the mockup footer; never render" }
+    "delivery": {
+      "label": "Delivery",
+      "value": "12 PM - 10 PM",
+      "source": "Figma 519:2 y 869/998"
+    },
+    "pickup": {
+      "label": "Pick-up",
+      "value": "8 AM - 10 PM",
+      "source": "Figma 519:2 y 869/998"
+    },
+    "footerWeekly": {
+      "value": "Monday - Saturday: XX am-XX pm / Sunday: XX am- XX pm",
+      "status": "unconfirmed",
+      "why": "placeholder XX values in the mockup footer; never render"
+    }
   },
   "categories": [
-    { "slug": "flower", "label": "Flower", "plural": "Flowers", "viewAll": "view all flowers", "source": "Figma 519:2 menu bar + section heads" },
-    { "slug": "pre-rolls", "label": "Pre-rolls", "plural": "Pre-rolls", "viewAll": "view all pre-rolls", "source": "Figma 519:2" },
-    { "slug": "vapes", "label": "Vapes", "plural": "Vapes", "viewAll": "view all vapes", "source": "Figma 519:2" },
-    { "slug": "concentrates", "label": "Concentrates", "plural": "Concentrates", "source": "Figma 519:2 menu bar" },
-    { "slug": "medical", "label": "Medical", "plural": "Medical", "source": "Figma 519:2 menu bar" }
+    {
+      "slug": "flower",
+      "label": "Flower",
+      "plural": "Flowers",
+      "viewAll": "view all flowers",
+      "source": "Figma 519:2 menu bar + section heads"
+    },
+    {
+      "slug": "pre-rolls",
+      "label": "Pre-rolls",
+      "plural": "Pre-rolls",
+      "viewAll": "view all pre-rolls",
+      "source": "Figma 519:2"
+    },
+    {
+      "slug": "vapes",
+      "label": "Vapes",
+      "plural": "Vapes",
+      "viewAll": "view all vapes",
+      "source": "Figma 519:2"
+    },
+    {
+      "slug": "concentrates",
+      "label": "Concentrates",
+      "plural": "Concentrates",
+      "source": "Figma 519:2 menu bar"
+    },
+    {
+      "slug": "medical",
+      "label": "Medical",
+      "plural": "Medical",
+      "source": "Figma 519:2 menu bar"
+    }
   ],
-  "menuBar": ["Flower", "Pre-rolls", "Vapes", "Concentrates", "Deals", "Medical"],
+  "menuBar": [
+    "Flower",
+    "Pre-rolls",
+    "Vapes",
+    "Concentrates",
+    "Deals",
+    "Medical"
+  ],
   "products": [
-    { "id": "watermelon-sherbert", "name": "High 90's Watermelon Sherbert Flower 3.5G", "nameLines": ["High 90's", "Watermelon", "Sherbert", "Flower 3.5G"], "brand": "High 90's", "category": "flower", "price": "$54.00 each", "photo": "watermelon-sherbet.webp", "source": "Figma 519:2 product cards (name and price as written, 'Sherbert' spelling kept)" },
-    { "id": "crescendo", "name": "THC Design Crescendo", "nameLines": ["THC Design", "Crescendo"], "brand": "THC Design", "category": "flower", "price": "$60.00 each", "photo": "thc-crescendo.webp", "source": "Figma 519:2 product cards" }
+    {
+      "id": "watermelon-sherbert",
+      "name": "High 90's Watermelon Sherbert Flower 3.5G",
+      "nameLines": [
+        "High 90's",
+        "Watermelon",
+        "Sherbert",
+        "Flower 3.5G"
+      ],
+      "brand": "High 90's",
+      "category": "flower",
+      "price": "$54.00 each",
+      "photo": "watermelon-sherbet.webp",
+      "source": "Figma 519:2 product cards (name and price as written, 'Sherbert' spelling kept)"
+    },
+    {
+      "id": "crescendo",
+      "name": "THC Design Crescendo",
+      "nameLines": [
+        "THC Design",
+        "Crescendo"
+      ],
+      "brand": "THC Design",
+      "category": "flower",
+      "price": "$60.00 each",
+      "photo": "thc-crescendo.webp",
+      "source": "Figma 519:2 product cards"
+    }
   ],
   "productPhotos": {
     "_note": "Client art from the Figma file (product photos on transparent backgrounds). Names below are only what the packaging/layer shows; no price or claim is attached to the two extra photos.",
-    "watermelon-sherbet.webp": { "alt": "High 90's Watermelon Sherbert flower jar with a cured bud", "figma": "Watermelon-Sherbet 2" },
-    "thc-crescendo.webp": { "alt": "THC Design Crescendo flower pouch with a cured bud", "figma": "THC Crescendo" },
-    "high-90s-preroll-pack.webp": { "alt": "High 90's pre-roll pack with strawberries", "figma": "file (52) 1" },
-    "crescendo-jar.webp": { "alt": "THC Design Crescendo jar with cured buds", "figma": "file (53) 1" }
+    "watermelon-sherbet.webp": {
+      "alt": "High 90's Watermelon Sherbert flower jar with a cured bud",
+      "figma": "Watermelon-Sherbet 2"
+    },
+    "thc-crescendo.webp": {
+      "alt": "THC Design Crescendo flower pouch with a cured bud",
+      "figma": "THC Crescendo"
+    },
+    "high-90s-preroll-pack.webp": {
+      "alt": "High 90's pre-roll pack with strawberries",
+      "figma": "file (52) 1"
+    },
+    "crescendo-jar.webp": {
+      "alt": "THC Design Crescendo jar with cured buds",
+      "figma": "file (53) 1"
+    }
   },
   "brandsOnMenu": [
-    { "name": "High 90's", "source": "Figma 519:2 product names" },
-    { "name": "THC Design", "source": "Figma 519:2 product names" }
+    {
+      "name": "High 90's",
+      "source": "Figma 519:2 product names"
+    },
+    {
+      "name": "THC Design",
+      "source": "Figma 519:2 product names"
+    }
   ],
   "deals": [
-    { "id": "flower-25", "big": "25%", "small": "off", "what": "flowers", "source": "Figma 519:2 y 5261-5509" },
-    { "id": "crescendo-10", "big": "10%", "small": "off", "what": "flowers", "brandLine": "crescendo", "source": "Figma 519:2 y 5669-5864" },
-    { "id": "prerolls-25", "big": "25% OFF", "what": "All pre-rolls", "source": "Figma 519:2 y 6103-6253 (mockup typo 'ALL PRE-PREROLLS' corrected to 'All pre-rolls')" }
+    {
+      "id": "flower-25",
+      "big": "25% OFF",
+      "what": "Flowers",
+      "source": "Figma 519:2 y 5261-5509",
+      "note": "one display shape for every deal (operator, 2026-10-30): big = number + OFF, what = the label"
+    },
+    {
+      "id": "crescendo-10",
+      "big": "10% OFF",
+      "what": "Crescendo flowers",
+      "source": "Figma 519:2 y 5669-5864",
+      "note": "one display shape for every deal (operator, 2026-10-30): big = number + OFF, what = the label"
+    },
+    {
+      "id": "prerolls-25",
+      "big": "25% OFF",
+      "what": "All pre-rolls",
+      "source": "Figma 519:2 y 6103-6253 (mockup typo 'ALL PRE-PREROLLS' corrected to 'All pre-rolls')",
+      "note": "one display shape for every deal (operator, 2026-10-30): big = number + OFF, what = the label"
+    }
   ],
-  "firstCustomer": { "title": "Get 25% off", "sub": "First customer", "fields": ["Name", "Email"], "button": "Submit", "source": "Figma 519:2 y 4572-4777" },
+  "firstCustomer": {
+    "title": "Get 25% off",
+    "sub": "First customer",
+    "fields": [
+      "Name",
+      "Email"
+    ],
+    "button": "Submit",
+    "source": "Figma 519:2 y 4572-4777"
+  },
   "referral": {
     "title": "Refer a friend, get a free eighth of premium flower",
-    "titleLines": ["Refer A friend,", "Get A Free Eighth", "of Premium Flower"],
-    "fields": ["Name", "Email", "ZIP code"],
+    "titleLines": [
+      "Refer A friend,",
+      "Get A Free Eighth",
+      "of Premium Flower"
+    ],
+    "fields": [
+      "Name",
+      "Email",
+      "ZIP code"
+    ],
     "button": "Sign-up",
     "source": "Figma 519:2 y 4088-4276",
     "conflict": "the mockup footer link says 'Refer a friend (get $20)'; the two offers differ - keep the in-page offer as the headline, show the footer link text as written, flag in OPEN-DECISIONS"
@@ -54,7 +184,11 @@
   "insider": {
     "title": "Sign-up for deals & updates!",
     "body": "Don't miss out on special offers and limited-editions. Sign-up to become an insider.",
-    "fields": ["Name", "Email", "ZIP code"],
+    "fields": [
+      "Name",
+      "Email",
+      "ZIP code"
+    ],
     "button": "Sign-up",
     "source": "Figma 519:2 y 7317-7494"
   },
@@ -63,65 +197,190 @@
     "prefix": "Weed delivery in",
     "source": "Figma 519:2 'DELIVERY AREAS' y 5118-6255",
     "areas": [
-      { "slug": "gardena", "name": "Gardena" },
-      { "slug": "hawthorne", "name": "Hawthorne" },
-      { "slug": "el-segundo", "name": "El Segundo" },
-      { "slug": "inglewood", "name": "Inglewood" },
-      { "slug": "manhattan-beach", "name": "Manhattan Beach" },
-      { "slug": "redondo-beach", "name": "Redondo Beach" },
-      { "slug": "lax-westchester", "name": "LAX/Westchester", "figma": "Lax/Westchester" },
-      { "slug": "hermosa-beach", "name": "Hermosa Beach", "figma": "Hermolosa Beach (mockup typo)" },
-      { "slug": "lawndale", "name": "Lawndale" },
-      { "slug": "torrance", "name": "Torrance" },
-      { "slug": "carson", "name": "Carson" },
-      { "slug": "ladera-heights", "name": "Ladera Heights" }
+      {
+        "slug": "gardena",
+        "name": "Gardena"
+      },
+      {
+        "slug": "hawthorne",
+        "name": "Hawthorne"
+      },
+      {
+        "slug": "el-segundo",
+        "name": "El Segundo"
+      },
+      {
+        "slug": "inglewood",
+        "name": "Inglewood"
+      },
+      {
+        "slug": "manhattan-beach",
+        "name": "Manhattan Beach"
+      },
+      {
+        "slug": "redondo-beach",
+        "name": "Redondo Beach"
+      },
+      {
+        "slug": "lax-westchester",
+        "name": "LAX/Westchester",
+        "figma": "Lax/Westchester"
+      },
+      {
+        "slug": "hermosa-beach",
+        "name": "Hermosa Beach",
+        "figma": "Hermolosa Beach (mockup typo)"
+      },
+      {
+        "slug": "lawndale",
+        "name": "Lawndale"
+      },
+      {
+        "slug": "torrance",
+        "name": "Torrance"
+      },
+      {
+        "slug": "carson",
+        "name": "Carson"
+      },
+      {
+        "slug": "ladera-heights",
+        "name": "Ladera Heights"
+      }
     ]
   },
   "topProducts": {
     "title": "Top products",
     "source": "Figma 519:2 'TOP PRODUCTS' y 6624-7011",
     "links": [
-      { "label": "Flower Delivery Los Angeles", "href": "/shop/flower/" },
-      { "label": "Weed Delivery", "href": "/dispensaries/california/" },
-      { "label": "Pre-Rolls Delivery", "href": "/shop/pre-rolls/" },
-      { "label": "Vape Delivery", "href": "/shop/vapes/" },
-      { "label": "Concentrate Delivery", "href": "/shop/concentrates/" },
-      { "label": "Weed Delivery South Bay", "href": "/dispensaries/california/" }
+      {
+        "label": "Flower Delivery Los Angeles",
+        "href": "/shop/flower/"
+      },
+      {
+        "label": "Weed Delivery",
+        "href": "/dispensaries/california/"
+      },
+      {
+        "label": "Pre-Rolls Delivery",
+        "href": "/shop/pre-rolls/"
+      },
+      {
+        "label": "Vape Delivery",
+        "href": "/shop/vapes/"
+      },
+      {
+        "label": "Concentrate Delivery",
+        "href": "/shop/concentrates/"
+      },
+      {
+        "label": "Weed Delivery South Bay",
+        "href": "/dispensaries/california/"
+      }
     ]
   },
   "contact": {
     "heading": "Contact us",
-    "address": { "label": "MODESTO", "line": "3200 S. Susan St. Santa Ana, CA 92704, USA", "status": "unconfirmed", "why": "the mockup labels a Santa Ana street address 'MODESTO', and every delivery area is in LA's South Bay; render only on /contact/ and in the footer, marked 'Address shown as in the brand mockup - to be confirmed'" },
-    "license": { "value": "1234567890", "status": "unconfirmed", "why": "placeholder licence number in the mockup; never render a licence number" },
+    "address": {
+      "label": "MODESTO",
+      "line": "3200 S. Susan St. Santa Ana, CA 92704, USA",
+      "status": "unconfirmed",
+      "why": "the mockup labels a Santa Ana street address 'MODESTO', and every delivery area is in LA's South Bay; render only on /contact/ and in the footer, marked 'Address shown as in the brand mockup - to be confirmed'"
+    },
+    "license": {
+      "value": "1234567890",
+      "status": "unconfirmed",
+      "why": "placeholder licence number in the mockup; never render a licence number"
+    },
     "phone": null,
     "email": null
   },
   "footer": {
-    "quickLinks": ["Home", "Shop", "About", "Events", "Contact", "Careers", "Application", "FAQ", "Refer a friend (get $20)", "My account", "Disclaimer"],
-    "legal": ["Terms & Conditions", "Privacy Policy"],
+    "quickLinks": [
+      "Home",
+      "Shop",
+      "About",
+      "Events",
+      "Contact",
+      "Careers",
+      "Application",
+      "FAQ",
+      "Refer a friend (get $20)",
+      "My account",
+      "Disclaimer"
+    ],
+    "legal": [
+      "Terms & Conditions",
+      "Privacy Policy"
+    ],
     "copyright": "BY Marche. All Rights Reserved.",
     "source": "Figma 519:2 footer y 7767-8299 and Frame 1 footer"
   },
   "nav": {
-    "figmaDesktop": ["Home", "Shop", "About", "Events", "Careers", "FAQ", "Contact us"],
-    "figmaMobile": ["Home", "Shop", "About", "Events", "Contact", "Careers", "Application", "FAQ", "Login"],
+    "figmaDesktop": [
+      "Home",
+      "Shop",
+      "About",
+      "Events",
+      "Careers",
+      "FAQ",
+      "Contact us"
+    ],
+    "figmaMobile": [
+      "Home",
+      "Shop",
+      "About",
+      "Events",
+      "Contact",
+      "Careers",
+      "Application",
+      "FAQ",
+      "Login"
+    ],
     "source": "Figma 1:2 'Frame 1' header; 307:1620 'Mobile Slide'"
   },
   "caLaw": {
     "_note": "General California law, NOT Marche facts. The only law statements any page may make; each with its official source. Not legal advice.",
     "reviewed": "October 2026",
     "facts": [
-      { "text": "Adults 21 and older can buy cannabis from state-licensed retailers with a valid government-issued photo ID.", "source": "https://cannabis.ca.gov/consumers/whats-legal/" },
-      { "text": "Adults 21 and older may possess up to 28.5 grams of cannabis and up to 8 grams of concentrated cannabis.", "source": "California Health and Safety Code 11362.1" },
-      { "text": "Medicinal cannabis customers must be 18 or older and hold a valid physician's recommendation.", "source": "California Business and Professions Code 26140" },
-      { "text": "Smoking or vaping cannabis anywhere tobacco smoking is banned, and consuming cannabis in public places, is not allowed.", "source": "California Health and Safety Code 11362.3" },
-      { "text": "Never drive impaired; cannabis in a vehicle must be in a sealed container or the trunk.", "source": "California Vehicle Code 23152, 23222" },
-      { "text": "Check that a business is licensed before you buy: the state lists every licence holder.", "source": "https://search.cannabis.ca.gov/" }
+      {
+        "text": "Adults 21 and older can buy cannabis from state-licensed retailers with a valid government-issued photo ID.",
+        "source": "https://cannabis.ca.gov/consumers/whats-legal/"
+      },
+      {
+        "text": "Adults 21 and older may possess up to 28.5 grams of cannabis and up to 8 grams of concentrated cannabis.",
+        "source": "California Health and Safety Code 11362.1"
+      },
+      {
+        "text": "Medicinal cannabis customers must be 18 or older and hold a valid physician's recommendation.",
+        "source": "California Business and Professions Code 26140"
+      },
+      {
+        "text": "Smoking or vaping cannabis anywhere tobacco smoking is banned, and consuming cannabis in public places, is not allowed.",
+        "source": "California Health and Safety Code 11362.3"
+      },
+      {
+        "text": "Never drive impaired; cannabis in a vehicle must be in a sealed container or the trunk.",
+        "source": "California Vehicle Code 23152, 23222"
+      },
+      {
+        "text": "Check that a business is licensed before you buy: the state lists every licence holder.",
+        "source": "https://search.cannabis.ca.gov/"
+      }
     ],
     "mmic": [
-      { "text": "California's Medical Marijuana Identification Card (MMIC) program is voluntary and run by county health departments under the California Department of Public Health.", "source": "https://www.cdph.ca.gov/Programs/CHSI/Pages/MMICP-Information.aspx" },
-      { "text": "Applying for an MMIC requires a physician's recommendation for medicinal cannabis.", "source": "https://www.cdph.ca.gov/Programs/CHSI/Pages/MMICP-Information.aspx" },
-      { "text": "Purchases of medicinal cannabis by a qualified patient with a valid MMIC are exempt from sales and use tax (cannabis excise tax still applies).", "source": "https://www.cdtfa.ca.gov/industry/cannabis/" }
+      {
+        "text": "California's Medical Marijuana Identification Card (MMIC) program is voluntary and run by county health departments under the California Department of Public Health.",
+        "source": "https://www.cdph.ca.gov/Programs/CHSI/Pages/MMICP-Information.aspx"
+      },
+      {
+        "text": "Applying for an MMIC requires a physician's recommendation for medicinal cannabis.",
+        "source": "https://www.cdph.ca.gov/Programs/CHSI/Pages/MMICP-Information.aspx"
+      },
+      {
+        "text": "Purchases of medicinal cannabis by a qualified patient with a valid MMIC are exempt from sales and use tax (cannabis excise tax still applies).",
+        "source": "https://www.cdtfa.ca.gov/industry/cannabis/"
+      }
     ]
   }
 }
