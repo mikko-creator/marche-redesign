@@ -1,7 +1,7 @@
 /* shell.css - "NOIR MARCHÉ" chrome (FOUNDATION): the utility bar, the smoked-glass main bar (frosted on its OWN
    ::before: a backdrop-filter on the header itself would blind the mega panels' blur), the glass mega menus with an
    image card each, the drawer below 1024 px, the breadcrumb bar, the footer with its giant cropped wordmark lit by a
-   slow sweep, and the 21+ gate. */
+   continuous sweep, and the 21+ gate. */
 
 /* ======================================================================== utility bar */
 .utility {
@@ -485,7 +485,8 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 .footer__legal-links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 0; }
 .footer__legal-links a { display: inline-flex; align-items: center; min-height: 32px; color: var(--bone-2); text-decoration: none; }
 .footer__legal-links a:hover { color: var(--sun-hot); text-decoration: underline; text-underline-offset: 4px; }
-/* the giant cropped wordmark: the real logo as a mask, dark on dark, lit by a slow sweep */
+/* the giant cropped wordmark: the real logo as a mask, dark on dark, lit by a continuous fast sweep (operator,
+   2026-10-30: "continuous fast loop") */
 .footer__mark {
   position: relative;
   height: clamp(64px, 12.5vw, 196px);
@@ -501,13 +502,27 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   aspect-ratio: 2677 / 471;
   translate: -50% 0;
   background-color: rgba(255, 255, 255, 0.045);
-  background-image: linear-gradient(100deg, rgba(255, 209, 0, 0) 0%, rgba(255, 209, 0, 0) 40%, rgba(255, 226, 92, 0.5) 50%, rgba(255, 209, 0, 0) 60%, rgba(255, 209, 0, 0) 100%);
-  background-size: 300% 100%;
-  background-repeat: no-repeat;
-  background-position: 110% 0;
   -webkit-mask: url("/assets/brand/marche-logo-white.png") center top / 100% auto no-repeat;
   mask: url("/assets/brand/marche-logo-white.png") center top / 100% auto no-repeat;
-  animation: noir-sweep 14s var(--ease-in-out) infinite;
+}
+/* The light: a strip twice the wordmark's width holding one soft band per wordmark width, slid at constant speed by
+   exactly one band spacing per cycle. A new band enters as the last one leaves, so the light never stops and the wrap
+   is invisible; the move is a transform (no repaint). site.js pauses it while the footer is off screen. */
+.footer__mark-word::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  background: linear-gradient(100deg, rgba(255, 209, 0, 0) 30%, rgba(255, 226, 92, 0.5) 50%, rgba(255, 209, 0, 0) 70%) 0 0 / 50% 100% repeat-x;
+  animation: noir-sweep 2s linear infinite;
+}
+.footer__mark.is-paused .footer__mark-word::before { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .footer__mark-word::before { display: none; } }
+/* phones: the mask from the 1080 px WebP cut (7 KB) instead of the 2677 px master PNG (30 KB) */
+@media (max-width: 480px) {
+  .footer__mark-word { -webkit-mask-image: url("/assets/brand/marche-logo-white-1080.webp"); mask-image: url("/assets/brand/marche-logo-white-1080.webp"); }
 }
 
 /* ======================================================================== 21+ gate */

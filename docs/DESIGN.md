@@ -48,7 +48,8 @@ Buttons (`.btn--sun` yellow with black text, `.btn--glass`, `.btn--ghost`, a lig
 
 Scroll reveals (fade-up with the light coming on, staggered), parallax, tilt, the pointer-follow key light, a seamless
 marquee (pauses on hover and focus), an auto-rotating promo strip (pauses on hover and focus, real buttons for its
-dots), mega menus with hover intent, a slow light sweep across the footer wordmark. All of it stops under
+dots), mega menus with hover intent, a continuous fast light sweep across the footer wordmark (a band crosses it every
+2 s; paused while off screen). All of it stops under
 `prefers-reduced-motion: reduce`, and every revealed element is visible without JavaScript.
 
 ## Accessibility

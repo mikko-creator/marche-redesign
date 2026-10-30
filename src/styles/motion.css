@@ -107,7 +107,8 @@ html.js [data-rotator].is-rotator [data-slide].is-active { opacity: 1; visibilit
 /* ---------- slow ambient loops ---------- */
 @keyframes noir-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 .float { animation: noir-float 7s var(--ease-in-out) infinite; }
-@keyframes noir-sweep { 0% { background-position: 110% 0; } 55%, 100% { background-position: -10% 0; } }
+/* the footer wordmark's light (shell.css): a strip two wordmarks wide slides by half its width, one band spacing */
+@keyframes noir-sweep { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
 @keyframes noir-flicker { 0%, 100% { opacity: 1; } 47% { opacity: 0.92; } 50% { opacity: 0.8; } 53% { opacity: 0.95; } }
 .flicker { animation: noir-flicker 9s steps(1, end) infinite; }
 
