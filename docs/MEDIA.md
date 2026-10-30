@@ -5,17 +5,19 @@ This redesign pitch uses two kinds of imagery.
 - **Marche's own art** - the MARCHÉ wordmark, the product cut-outs, the brand banners and photographs in
   `assets/brand/` and `assets/photos/` - comes from Marche's own Figma file. It is used as supplied (resized and
   re-encoded to WebP by the build), never altered by AI.
-- **Generated industry imagery** - the twelve stills in `assets/generated/` and the smoke loop in `assets/media/` -
+- **Generated industry imagery** - the twelve stills in `assets/generated/` and the hero loop in `assets/media/` -
   was made for this pitch with AI image and video models. It is **illustrative mood only**: none of it shows Marche,
-  its store, staff, customers, products or brands, a real place, or a result. No image contains people, hands or faces,
-  text, numbers, logos or brand marks.
+  its store, staff, customers, products or brands, a real place, or a result. The twelve stills contain no people,
+  hands or faces, and no generated image or video contains text, numbers, logos or brand marks. The hero loop shows
+  one synthetic adult model; it is not a real person and not anyone's likeness.
 
 ## How the generated imagery was made
 
 | | Model family | Provider |
 |---|---|---|
 | Stills | FLUX1.1 [pro] Ultra (text to image) | fal |
-| Motion loop | Kling 3.0 Turbo (image to video), animated from the generated still `g-smoke-beam` | Higgsfield |
+| Hero loop key frame | Marketing Studio Image 2.5 Flare (text to image, 4K) | Higgsfield |
+| Hero loop | Kling 3.0 Pro (image to video), first and last frame set to that key frame | Higgsfield |
 
 Every still follows one tenebrist brief: a subject shot on black in near-total darkness, one hard warm golden-yellow
 key light from the upper left, deep shadow to the lower right, generous black space for type, fine grain, touches of
@@ -52,11 +54,16 @@ had one orange end ring recoloured to plain paper white by hand. Rejected versio
 
 The palms and the doorstep are generic mood. They are never captioned as a place in the South Bay or anywhere else.
 
-## The loop
+## The hero loop
 
-`assets/media/loop-smoke.mp4` (1920 wide) and `assets/media/loop-smoke-sm.mp4` (small screens), poster
-`assets/media/loop-smoke.jpg` (the first frame): a 9.3-second loop of smoke drifting through a still beam of golden
-light on black. It was animated from the generated still `g-smoke-beam`, then made seamless with ffmpeg (the clip
-played forward and then in reverse, with a short crossfade at the seam). H.264, no audio track. It is decorative: the page plays it muted, looped
-and inline, hides it from assistive technology, and shows only the poster under `prefers-reduced-motion`. Registered
-in `src/content/images.json` (`media.loop-smoke`).
+`assets/media/hero-model.mp4` (1920x1080) and `assets/media/hero-model-sm.mp4` (a 720x1080 portrait crop for
+phones), poster `assets/media/hero-model.jpg` (the first frame): a 5-second slow-motion loop of an adult model in
+yellow mirrored shield sunglasses and black cyberpunk techwear, exhaling a plume of smoke from a joint through one warm
+golden key light, with distant amber and teal city lights. The key frame was generated at 4K; the clip was animated
+with the same frame as its first and last frame, so it loops without a crossfade (120 frames at 24 fps). H.264, no
+audio track; the container tags carry the IPTC source type `trainedAlgorithmicMedia`.
+
+It is decorative: the page plays it muted, looped and inline, hides it from assistive technology, gives it a visible
+pause / play button, and shows only the poster under `prefers-reduced-motion`. Registered in
+`src/content/images.json` (`media.hero-model`). It depicts adult cannabis consumption: many ad platforms restrict that,
+so confirm it before using the clip in paid channels. The first build's smoke loop (animated from `g-smoke-beam`) was retired.

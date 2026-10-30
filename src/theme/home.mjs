@@ -20,20 +20,25 @@ function iaLinkList(ia) {
   return out;
 }
 
-// the Higgsfield loop, only when IMAGERY registered it AND its files are on disk (fail closed: else the still)
+// the Higgsfield hero loop, only when it is registered in images.json AND its files are on disk (fail closed: else
+// the still). 'hero-model' (the operator's revision: a model in cyberpunk shades, slow-motion exhale) wins over the
+// first build's 'loop-smoke'.
 function heroLoop(ctx) {
-  const m = ctx.images && ctx.images.media && ctx.images.media['loop-smoke'];
+  const media = (ctx.images && ctx.images.media) || {};
+  const id = media['hero-model'] ? 'hero-model' : 'loop-smoke';
+  const m = media[id];
   if (!m) return null;
   const norm = (u) => (typeof u === 'string' && u ? (u.startsWith('/') ? u : '/' + u) : '');
   const exists = (u) => !!u && u.startsWith('/assets/media/') && fs.existsSync(path.join(ROOT, u.slice(1).split(/[?#]/)[0]));
   const pick = (...c) => c.map(norm).find(exists) || '';
-  const mp4 = pick(m.mp4, m.src, m.file, 'assets/media/loop-smoke.mp4');
+  const mp4 = pick(m.mp4, m.src, m.file, `assets/media/${id}.mp4`);
   if (!mp4) return null;
   return {
+    id,
     mp4,
-    webm: pick(m.webm, 'assets/media/loop-smoke.webm'),
-    phone: pick(m.phone, m.mp4Phone, m.sm, m.small, 'assets/media/loop-smoke-sm.mp4', 'assets/media/loop-smoke-phone.mp4'),
-    poster: pick(m.poster, 'assets/media/loop-smoke.jpg', 'assets/media/loop-smoke-poster.webp', 'assets/media/loop-smoke-poster.jpg'),
+    webm: pick(m.webm, `assets/media/${id}.webm`),
+    phone: pick(m.phone, m.mp4Phone, m.mp4Small, m.sm, m.small, `assets/media/${id}-sm.mp4`, `assets/media/${id}-phone.mp4`),
+    poster: pick(m.poster, `assets/media/${id}.jpg`, `assets/media/${id}-poster.webp`, `assets/media/${id}-poster.jpg`),
   };
 }
 
