@@ -31,3 +31,8 @@
 @media (hover: none), (pointer: coarse) { .motion-toggle { min-height: 44px; } }
 @media (max-width: 720px) { .motion-toggle { top: 12px; padding: 8px 12px; } .motion-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
 @media (prefers-reduced-motion: reduce) { .motion-toggle { display: none; } }
+
+/* 4. Home hero loop (operator's revision: the model in cyberpunk shades). Desktop: the 16:9 film keeps her face below
+   the header. Phones: the 720x1080 portrait crop, framed to keep the hand, the exhale and the face in view. */
+.h-hero__film > video, .h-hero__film > img { object-position: 50% 30%; }
+@media (max-width: 720px) { .h-hero__film > video { object-position: 35% 50%; } }
