@@ -1,0 +1,18 @@
+{
+  "photos": {},
+  "media": {
+    "loop-smoke": {
+      "mp4": "/assets/media/loop-smoke.mp4",
+      "mp4Small": "/assets/media/loop-smoke-sm.mp4",
+      "poster": "/assets/media/loop-smoke.jpg",
+      "w": 1920,
+      "h": 1080,
+      "wSmall": 896,
+      "hSmall": 504,
+      "duration": 9.29,
+      "audio": false,
+      "use": "decorative seamless loop: muted, loop, playsinline, aria-hidden; poster only under prefers-reduced-motion",
+      "note": "AI-generated illustrative motion (Higgsfield Kling image-to-video, animated from the AI-generated still g-smoke-beam). Not footage of Marche, its staff, customers, products or brands."
+    }
+  }
+}

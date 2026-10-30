@@ -1,0 +1,67 @@
+{
+  "_note": "The adopted architecture (a large multi-state dispensary operator's site, captured 2026-10-23/27) mapped onto Marche: utility bar, nav order, the three mega menus, footer columns, page types and URL patterns. Labels are Marche's own words where the Figma has them. Never name the adopted site anywhere public.",
+  "promo": { "text": "Get 25% off - first customer", "cta": "Shop latest deals", "href": "/dispensaries/california/deals/" },
+  "utility": {
+    "pickup": { "label": "Pick up at", "value": "Marche", "href": "/contact/", "note": "Pick-up 8 AM - 10 PM" },
+    "delivery": { "label": "Want delivery?", "href": "/dispensaries/california/" },
+    "account": { "label": "My account", "href": "/rewards/#join" }
+  },
+  "cta": { "label": "Order now", "href": "/shop/" },
+  "nav": [
+    { "label": "Shop", "href": "/shop/" },
+    {
+      "label": "Explore",
+      "feature": { "image": "g-jars", "title": "Deals", "href": "/dispensaries/california/deals/", "line": "25% off flowers" },
+      "mega": [
+        { "group": "Deals", "links": [["/dispensaries/california/deals/", "Deals"], ["/rewards/", "Refer a friend"]] },
+        { "group": "Categories", "links": [["/shop/flower/", "Flower"], ["/shop/pre-rolls/", "Pre-rolls"], ["/shop/vapes/", "Vapes"], ["/shop/concentrates/", "Concentrates"], ["/shop/medical/", "Medical"]] },
+        { "group": "Brands", "links": [["/shop/#brand-high-90s", "High 90's"], ["/shop/#brand-thc-design", "THC Design"]] },
+        { "group": "Top products", "links": [["/shop/flower/", "Flower Delivery Los Angeles"], ["/dispensaries/california/", "Weed Delivery"], ["/shop/pre-rolls/", "Pre-Rolls Delivery"], ["/shop/vapes/", "Vape Delivery"], ["/shop/concentrates/", "Concentrate Delivery"], ["/dispensaries/california/", "Weed Delivery South Bay"]] }
+      ]
+    },
+    { "label": "Rewards", "href": "/rewards/" },
+    {
+      "label": "Resources",
+      "feature": { "image": "g-smoke-beam", "title": "Blog", "href": "/blog/", "line": "Guides to every category" },
+      "mega": [
+        { "group": "Guides", "links": [["/dispensary-guides/", "Delivery Guide"], ["/getting-a-medical-card/", "Getting a Medical Card"], ["/cannabis-laws-by-state/", "State Laws"], ["/blog/", "Blog"]] },
+        { "group": "Help", "links": [["/faq/", "FAQ"], ["/contact/", "Contact us"]] },
+        { "group": "Company", "links": [["/about-us/", "About"], ["/events/", "Events"], ["/careers/", "Careers"], ["/careers/#application", "Application"]] }
+      ]
+    },
+    {
+      "label": "Delivery Areas",
+      "feature": { "image": "g-palms-night", "title": "Weed delivery at your door", "href": "/dispensaries/california/", "line": "45 Minutes or Less" },
+      "mega": [
+        { "group": "South Bay, Los Angeles", "areas": true },
+        { "group": "Pick-up", "links": [["/contact/", "Marche pick-up"]], "note": "Pick-up 8 AM - 10 PM" },
+        { "group": "All locations", "links": [["/dispensaries/", "All delivery areas"], ["/dispensaries/california/", "California"]] }
+      ]
+    }
+  ],
+  "footer": {
+    "columns": [
+      { "title": "Quick links", "links": [["/", "Home"], ["/shop/", "Shop"], ["/rewards/", "Rewards"], ["/blog/", "Blog"], ["/dispensaries/", "Delivery areas"]] },
+      { "title": "More information", "links": [["/about-us/", "About"], ["/events/", "Events"], ["/contact/", "Contact"], ["/careers/", "Careers"], ["/careers/#application", "Application"], ["/faq/", "FAQ"], ["/rewards/", "Refer a friend (get $20)"], ["/rewards/#join", "My account"], ["/getting-a-medical-card/", "Getting a Medical Card"], ["/disclaimer/", "Disclaimer"], ["/site-map/", "Site map"]] },
+      { "title": "Contact us", "contact": true },
+      { "title": "Location", "location": true }
+    ],
+    "legal": [["/terms-and-conditions/", "Terms & Conditions"], ["/privacy-policy/", "Privacy Policy"]]
+  },
+  "blogCategories": [
+    { "slug": "product-guides", "label": "Product guides" },
+    { "slug": "delivery", "label": "Delivery" },
+    { "slug": "laws-and-medical", "label": "Laws & medical" }
+  ],
+  "blogPosts": [
+    { "href": "/shop/flower/", "cat": "product-guides", "image": "g-bud-key" },
+    { "href": "/shop/pre-rolls/", "cat": "product-guides", "image": "g-prerolls" },
+    { "href": "/shop/vapes/", "cat": "product-guides", "image": "g-vape" },
+    { "href": "/shop/concentrates/", "cat": "product-guides", "image": "g-concentrate" },
+    { "href": "/shop/medical/", "cat": "laws-and-medical", "image": "g-apothecary" },
+    { "href": "/dispensary-guides/", "cat": "delivery", "image": "g-palms-night" },
+    { "href": "/dispensaries/california/", "cat": "delivery", "image": "g-doorstep" },
+    { "href": "/getting-a-medical-card/", "cat": "laws-and-medical", "image": "g-apothecary" },
+    { "href": "/cannabis-laws-by-state/california/", "cat": "laws-and-medical", "image": "g-smoke-beam" }
+  ]
+}

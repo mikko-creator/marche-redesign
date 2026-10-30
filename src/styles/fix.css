@@ -1,0 +1,33 @@
+/* fix.css - main-session integration fixes, loaded last (see CSS_ORDER). */
+
+/* 1. Home category grid, six columns from 1180px: "Concentrates" broke mid-word ("CONCENTRA / TES") at 1280 because
+   the label allowed overflow-wrap:anywhere at a size the 1/6 column cannot hold. Never break inside a word; size the
+   label to the column and let the arrow drop below when it must. */
+@media (min-width: 1180px) {
+  .h-cat__name { flex-wrap: wrap; overflow-wrap: normal; word-break: normal; font-size: clamp(0.9rem, 1.15vw, 1.45rem); }
+}
+
+/* 2. Breadcrumb links on touch screens: 44px tall tap targets (they measured 32px). */
+@media (hover: none), (pointer: coarse) {
+  .crumbs a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+/* 3. The pause / play toggle site.js adds to a band with a decorative autoplay loop (WCAG 2.2.2). */
+.motion-toggle {
+  position: absolute; z-index: 6; top: 18px; right: var(--gutter);
+  display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 8px 14px;
+  font: 600 0.75rem/1 var(--font-ui); letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone-2);
+  background: rgba(10, 10, 10, 0.55); border: 1px solid var(--glass-border); border-radius: var(--r-pill);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+.motion-toggle:hover, .motion-toggle:focus-visible { color: var(--sun); border-color: rgba(255, 209, 0, 0.5); }
+.motion-toggle__ico { position: relative; width: 10px; height: 12px; }
+.motion-toggle__ico::before, .motion-toggle__ico::after { content: ''; position: absolute; top: 0; width: 3px; height: 12px; background: currentColor; border-radius: 1px; }
+.motion-toggle__ico::before { left: 1px; }
+.motion-toggle__ico::after { right: 1px; }
+.motion-toggle[aria-pressed="true"] .motion-toggle__ico::before { left: 1px; width: 0; height: 0; background: none; border-radius: 0; border-style: solid; border-width: 6px 0 6px 10px; border-color: transparent transparent transparent currentColor; }
+.motion-toggle[aria-pressed="true"] .motion-toggle__ico::after { display: none; }
+@media (hover: none), (pointer: coarse) { .motion-toggle { min-height: 44px; } }
+@media (max-width: 720px) { .motion-toggle { top: 12px; padding: 8px 12px; } .motion-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+@media (prefers-reduced-motion: reduce) { .motion-toggle { display: none; } }

@@ -1,0 +1,195 @@
+{
+ "about": "Generated industry imagery for the Marche redesign pitch (IMAGERY lane, 2026-10-30). Twelve illustrative stills in one tenebrist mood: shot on black, one hard warm golden-yellow key light from the upper left, deep shadow to the lower right, generous black negative space for type. None stands in for a real person, place, product, brand or result of Marche; every alt describes what is depicted. Marche's own art comes from its Figma file (assets/photos, assets/brand). Run: node tools/fal-gen.mjs --plan src/content/image-plan.json --key-file <path outside the project> --concurrency 3 --cap-ultra 24.",
+ "defaults": {
+  "model": "fal-ai/flux-pro/v1.1-ultra",
+  "input": {
+   "output_format": "jpeg",
+   "safety_tolerance": "5"
+  },
+  "style": "no people, no hands, no faces, no text, no lettering, no numbers, no labels, no logos, no brand marks, no candy, all surfaces blank and unmarked"
+ },
+ "images": [
+  {
+   "id": "g-hero-bud",
+   "file": "assets/generated/g-hero-bud.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "home hero",
+    "OG image"
+   ],
+   "negativeSpace": "left half black; bud right of centre",
+   "input": {
+    "aspect_ratio": "16:9"
+   },
+   "alt": "A single cured cannabis bud on a black surface, its trichomes catching a warm golden light from the upper left, with a thin wisp of smoke in the dark.",
+   "prompt": "Tenebrist editorial still-life photograph: a single dense cured cannabis flower bud resting on a black surface, its frosty resin trichomes glinting like tiny glass beads where the light lands, fine twisted orange pistils, deep green and violet calyxes, a thin wisp of pale smoke drifting through the light behind it. Composition: the bud sits right of centre and fills about a third of the frame width, wide black negative space across the whole left half of the frame. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-bud-key",
+   "file": "assets/generated/g-bud-key.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "/shop/flower/",
+    "blog cards"
+   ],
+   "negativeSpace": "left third black; bud fills the right two thirds",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "Macro close-up of a cured cannabis flower, resin glands glinting in warm side light while the far side of the bud falls into black shadow.",
+   "prompt": "Tenebrist macro photograph: an extreme close-up of a cured cannabis flower bud, shallow depth of field, the resin trichome heads sparkling like dew where the light lands, twisted amber pistils, layered green calyxes, the far side of the bud dissolving into black shadow. Composition: the bud fills the right two thirds of the frame, black negative space on the left third. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-jars",
+   "file": "assets/generated/g-jars.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "Explore mega menu card",
+    "/dispensaries/california/deals/"
+   ],
+   "negativeSpace": "left 40% black; two jars right of centre",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "Plain glass jars filled with cured cannabis flower on a slab of black stone, caught in a single pool of warm golden light.",
+   "prompt": "Tenebrist editorial still-life photograph: three clear glass jars with plain black screw lids, filled with cured cannabis flower buds, standing in a loose row on a slab of black stone, caught in one pool of warm golden light; the glass is smooth and clear with no labels and no stickers, small glints of light on the rims and lids, the buds inside lit green and gold. Composition: the jars stand right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-prerolls",
+   "file": "assets/generated/g-prerolls.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "/shop/pre-rolls/"
+   ],
+   "negativeSpace": "left half black; rolls on a diagonal from the centre to the right",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "Three cone-shaped pre-rolls standing in a black ceramic cup beside loose cured cannabis buds on dark slate.",
+   "prompt": "Tenebrist editorial still-life photograph: three hand-rolled cannabis cone joints standing upright in a short matte black ceramic cup, wide twisted paper tips pointing up, each one clearly conical - the wide twisted top about twice the width of the narrow bottom - rolled in plain thin white rolling paper with ground green cannabis flower visible through the twisted tops, a few loose cured cannabis buds and a little ground flower on the dark slate beside the cup; no filters, no orange or tan tips, no cork, no cigarettes, no ash, no smoke, no flame, no text. A hard raking golden light from the upper left grazes the paper texture. Composition: the cup right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent",
+   "rejectReason": "review 1 (main session): read as tobacco cigarettes - two of the three had orange cork-style filter tips",
+   "note": "attempt 3 (main session): upright cones in a cup, after attempts 1-2 read as cigarettes"
+  },
+  {
+   "id": "g-vape",
+   "file": "assets/generated/g-vape.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "/shop/vapes/"
+   ],
+   "negativeSpace": "left side black; cartridge right of centre",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "One plain, unbranded vape cartridge with golden oil standing on black glass, outlined by a warm rim light.",
+   "prompt": "Tenebrist editorial product-style still-life photograph: a single unbranded vape cartridge standing upright on a polished black glass surface, a small clear glass tank holding golden cannabis oil, a plain matte black mouthpiece and a plain brushed metal base, a crisp mirror reflection below it; a warm golden rim light outlines the glass edges and the oil glows where the key light passes through it; every surface of the cartridge is smooth, blank and unmarked. Composition: the cartridge stands right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-concentrate",
+   "file": "assets/generated/g-concentrate.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "/shop/concentrates/"
+   ],
+   "negativeSpace": "subject centred; the parchment spans most of the width, a dried bud upper left; only thin black margins",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "A small dab of pale cream-gold cannabis rosin, a waxy concentrate, on a square of parchment paper on black glass, beside a dried cannabis bud.",
+   "prompt": "Tenebrist editorial still-life photograph: a small soft dab of cannabis rosin budder, a waxy cannabis concentrate, opaque pale cream-gold, muted and desaturated, a matte crumbly waxy texture like soft candle wax, with a few tiny clear terpene oil droplets beading on its surface, no glassy shine, not jelly, not glossy; the dab is small and sits in the middle of a larger square of unbleached parchment paper resting on a black glass surface; a small dried cannabis flower bud lies beside the parchment; side light from the upper left grazes the waxy texture and the edges of the paper. Composition: the parchment and the dab sit right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent",
+   "rejectReason": "review 1 (main session): read as lemon jelly or honey candy - bright saturated yellow, glassy, gummy"
+  },
+  {
+   "id": "g-apothecary",
+   "file": "assets/generated/g-apothecary.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "/shop/medical/",
+    "/getting-a-medical-card/"
+   ],
+   "negativeSpace": "bottles right of centre, the leaf reaches into the left half; black space top-left and along the top",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "Two plain amber glass dropper bottles beside a cannabis leaf on a dark wooden surface, glowing in warm amber light.",
+   "prompt": "Tenebrist editorial still-life photograph: two small amber glass dropper bottles with black rubber bulbs, plain unlabelled glass, standing on a dark wooden surface beside a single fresh green cannabis fan leaf, a warm amber-gold key light glowing through the amber glass and catching the serrated edges of the leaf. Composition: the bottles and the leaf sit right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-smoke-beam",
+   "file": "assets/generated/g-smoke-beam.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "Resources mega menu card",
+    "/cannabis-laws-by-state/",
+    "band grounds",
+    "source still of the loop-smoke video"
+   ],
+   "negativeSpace": "beam enters at the top-left corner and fades by the centre; smoke centre-right and lower right; bottom-left and right edge black",
+   "input": {
+    "aspect_ratio": "16:9"
+   },
+   "alt": "Soft smoke drifting through a single beam of warm golden light in total darkness.",
+   "prompt": "Tenebrist atmospheric photograph: a single narrow shaft of warm golden-yellow light slanting down from the top of the frame just left of centre toward the lower right, through total darkness; soft volumetric wisps of pale smoke drift and curl slowly through the beam, lit gold where they cross the light and fading into black everywhere else. Composition: the beam and the smoke occupy the centre and the right of the frame, the left third stays deep black negative space. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-palms-night",
+   "file": "assets/generated/g-palms-night.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "Delivery Areas mega menu card",
+    "/dispensaries/",
+    "/dispensaries/california/",
+    "delivery-area pages"
+   ],
+   "negativeSpace": "left two thirds open dark sky; palms in the right third",
+   "input": {
+    "aspect_ratio": "16:9"
+   },
+   "alt": "Silhouettes of tall palm trees against a deep night sky with a low warm gold glow along the horizon.",
+   "prompt": "Tenebrist night photograph: silhouettes of three tall slender palm trees against a deep blue-black night sky after dusk, a low band of warm gold and amber glow along a flat empty horizon near the ocean, a few faint stars; nothing else in the scene: no buildings, no skyline, no streetlights, no signs, no landmark. Composition: the palms stand in the right third of the frame, the left two thirds are open dark sky as black negative space; the sky is darkest at the top and warmest low on the horizon toward the left. Near-total darkness, crisp black silhouettes, a subtle warm rim of gold along the palm fronds, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-doorstep",
+   "file": "assets/generated/g-doorstep.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "delivery-area pages",
+    "/dispensaries/california/"
+   ],
+   "negativeSpace": "bag slightly right of centre; brick wall and a small plant at the far left, dark door behind",
+   "input": {
+    "aspect_ratio": "3:2"
+   },
+   "alt": "A plain brown paper bag on a dark doorstep at night, lit by a single warm porch light.",
+   "prompt": "Tenebrist editorial photograph at night: a plain brown kraft paper bag with its top neatly folded over, standing on a dark concrete doorstep beside the bottom edge of a dark wooden front door, lit by one warm golden porch light from the upper left that throws a long soft shadow to the lower right; the bag is completely plain and unprinted; no doormat, no house number, no plants, no person. Composition: the bag stands right of centre, the left side falls into black negative space. Shot in near-total darkness, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-leaf-cut",
+   "file": "assets/generated/g-leaf-cut.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "screen-blended protrusions (mix-blend-mode: screen)"
+   ],
+   "negativeSpace": "black margin on every side; leaf centred",
+   "input": {
+    "aspect_ratio": "4:5"
+   },
+   "alt": "A single cannabis fan leaf on pure black, its serrated edges rimmed with warm gold light.",
+   "prompt": "Tenebrist studio photograph for compositing: a single cannabis fan leaf with seven long serrated leaflets spreading from a short stem, floating alone in a pure black void, centred with a generous black margin on all sides, no surface and no cast shadow; a hard warm golden key light from the upper left rims the serrated edges in gold, the deep green leaf falls into shadow toward the lower right. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  },
+  {
+   "id": "g-gold-dust",
+   "file": "assets/generated/g-gold-dust.jpg",
+   "role": "backdrop",
+   "usedFor": [
+    "band texture"
+   ],
+   "negativeSpace": "shaft enters from the upper RIGHT (mirror of the brief) toward the lower left; left edge and lower right darkest; flip with transform: scaleX(-1) for a left key light",
+   "input": {
+    "aspect_ratio": "16:9"
+   },
+   "alt": "Fine gold dust drifting in a shaft of warm light against black.",
+   "prompt": "Tenebrist abstract atmospheric photograph: fine golden dust particles drifting and glinting in a soft shaft of warm golden-yellow light that slants down from the upper left through total darkness, sparse sharp specks and soft out-of-focus bokeh motes, the shaft fading out toward the centre of the frame; most of the frame is deep black. Composition: the particles gather along the diagonal light shaft from the upper left toward the centre, the lower right and the right edge stay black. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, crisp detail where the light lands, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
+  }
+ ]
+}
