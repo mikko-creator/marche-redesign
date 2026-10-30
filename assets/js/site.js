@@ -303,6 +303,15 @@
     }
   });
 
+  /* ---------------- footer wordmark: its continuous light sweep runs only while the mark is on screen ---------------- */
+  if (hasIO) {
+    $$('.footer__mark').forEach(function (fm) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { fm.classList.toggle('is-paused', !en.isIntersecting); });
+      }).observe(fm);
+    });
+  }
+
   /* ---------------- [data-rotator]: [data-slide] children rotate every ~5 s; real <button> dots ---------------- */
   $$('[data-rotator]').forEach(function (rot, rIndex) {
     var slides = $$('[data-slide]', rot);
