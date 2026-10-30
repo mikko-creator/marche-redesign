@@ -1,0 +1,99 @@
+/* tokens.css - "NOIR MARCHÉ": glassmorphism x tenebrism on Marche's own palette (main session owns this file; lanes
+   may ask for a value change through their report, never edit it). Tenebrism = near-total darkness with ONE warm key
+   light that carves the subject out of the black; here the key light is Marche yellow. Glass = smoked panes whose
+   top-left edge catches that light. Brand colours are the Figma file's: #000, #fff, #ffd100, #222, #edb6c2, #e28197,
+   #bc2426. */
+:root {
+  /* ---- darkness (grounds) ---- */
+  --ink-0: #000000;            /* the void: page ground, vignette edges */
+  --ink-1: #050505;            /* default band */
+  --ink-2: #0c0c0c;            /* raised band */
+  --ink-3: #161616;            /* surfaces, inputs */
+  --ink-4: #222222;            /* Figma charcoal: borders on dark, the "+" buttons */
+  --ink-5: #505050;            /* Figma grey: disabled, rules */
+
+  /* ---- light ---- */
+  --bone: #f6f2ea;             /* text on dark (warm white, 18.6:1 on ink-1) */
+  --bone-2: #cfc9bd;           /* secondary text on dark (11.6:1 on ink-1) */
+  --bone-3: #9e9789;           /* tertiary text on dark, >= 13px only (6.5:1 on ink-1) */
+  --white: #ffffff;
+
+  /* ---- Marche colour (from the Figma file) ---- */
+  --sun: #ffd100;              /* Marche yellow: the key light, primary CTA, prices */
+  --sun-hot: #ffe25c;          /* highlight inside the light pool */
+  --sun-deep: #d9a900;         /* yellow in shadow, borders on yellow */
+  --sun-ink: #0a0a0a;          /* text on yellow (15.6:1) */
+  --rose: #edb6c2;             /* Marche soft pink */
+  --rose-hot: #e28197;         /* Marche deep pink (accent words, edibles/rewards) */
+  --ember: #bc2426;            /* Marche red: discount numbers only */
+  --gold: #c8a24a;             /* gilt highlight on nugs/jars (decoration only, never text on dark < 24px) */
+
+  /* ---- the key light: radial pools + raking beams (use on grounds, never under body text) ---- */
+  --light-pool: radial-gradient(60% 55% at var(--lx, 28%) var(--ly, 32%), rgba(255, 209, 0, 0.22) 0%, rgba(255, 170, 0, 0.08) 38%, rgba(0, 0, 0, 0) 70%);
+  --light-pool-soft: radial-gradient(50% 45% at var(--lx, 70%) var(--ly, 40%), rgba(255, 226, 92, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  --light-rose: radial-gradient(45% 40% at var(--lx, 80%) var(--ly, 70%), rgba(226, 129, 151, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
+  --light-beam: linear-gradient(115deg, rgba(0, 0, 0, 0) 30%, rgba(255, 209, 0, 0.10) 46%, rgba(255, 226, 92, 0.16) 50%, rgba(255, 209, 0, 0.10) 54%, rgba(0, 0, 0, 0) 70%);
+  --vignette: radial-gradient(120% 90% at 50% 40%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 80%, rgba(0, 0, 0, 0.9) 100%);
+  --grain-opacity: 0.07;
+
+  /* ---- glass (mid plane) ---- */
+  --glass-bg: rgba(14, 14, 14, 0.46);            /* smoked pane on dark */
+  --glass-bg-strong: rgba(10, 10, 10, 0.72);     /* pane that carries body text */
+  --glass-sun: rgba(255, 209, 0, 0.10);          /* yellow-tinted pane (deals, prices) */
+  --glass-rose: rgba(237, 182, 194, 0.10);       /* pink-tinted pane (rewards) */
+  --glass-blur: 18px;
+  --glass-sat: 150%;
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-edge-lit: linear-gradient(135deg, rgba(255, 209, 0, 0.75) 0%, rgba(255, 209, 0, 0.18) 22%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.02) 100%); /* border-image of a pane the key light hits from top-left */
+  --glass-hi: inset 0 1px 0 rgba(255, 255, 255, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  --glass-r: var(--r-lg);
+
+  /* ---- shadow + depth ---- */
+  --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 18px 40px -12px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-3: 0 40px 80px -20px rgba(0, 0, 0, 0.9), 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-cut: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.75)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.6)); /* cut-out products */
+  --rim-sun: drop-shadow(-6px -4px 14px rgba(255, 209, 0, 0.28));   /* key-light rim on a cut-out */
+  --glow-sun: 0 0 0 1px rgba(255, 209, 0, 0.5), 0 10px 40px -6px rgba(255, 209, 0, 0.45);
+
+  /* ---- type ---- */
+  --font-display: 'NATS', 'Oswald', 'Arial Narrow', Impact, sans-serif;     /* ALWAYS uppercase */
+  --font-ui: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;  /* labels, buttons, nav, prices */
+  --font-body: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-mega: clamp(4.2rem, 12vw, 11.5rem);   /* one per page at most: the hero line */
+  --fs-1: clamp(3rem, 7.2vw, 6.6rem);        /* h1 */
+  --fs-2: clamp(2.3rem, 4.8vw, 4.2rem);      /* h2 */
+  --fs-3: clamp(1.6rem, 2.6vw, 2.25rem);     /* h3 / card titles (NATS) */
+  --fs-lede: clamp(1.06rem, 1.25vw, 1.25rem);
+  --fs-body: 1rem;                           /* 16px */
+  --fs-small: 0.875rem;                      /* 14px - never smaller for visible text (13px floor on phones) */
+  --fs-kicker: 0.8125rem;                    /* 13px Poppins 600 caps, tracking .18em */
+  --lh-display: 0.86;
+  --lh-tight: 1.15;
+  --lh-body: 1.65;
+  --track-display: 0.01em;
+  --track-kicker: 0.18em;
+
+  /* ---- shape + space ---- */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+  --wrap: 1240px;
+  --wrap-wide: 1440px;
+  --wrap-narrow: 780px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section-y: clamp(72px, 9vw, 140px);
+  --header-h: 112px;                          /* utility bar 36 + main bar 76 (desktop); phones set their own */
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 160ms;
+  --t-med: 420ms;
+  --t-slow: 900ms;
+  --reveal-y: 28px;
+
+  color-scheme: dark;
+}
