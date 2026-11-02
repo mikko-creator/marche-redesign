@@ -1,4 +1,4 @@
-/* site.js - Marche "NOIR MARCHÉ" behaviour (FOUNDATION): header state, mega menus, drawer, 21+ gate, reveals,
+/* site.js - High Grade "NOIR PLATINUM" behaviour (FOUNDATION): header state, mega menus, drawer, 21+ gate, reveals,
    parallax, tilt, pointer-follow key light, marquee, rotator, demo forms, demo add-to-cart toast. No dependencies,
    defer-safe. Contract D6: no string literal in this file starts with a slash; every URL is read from HTML
    attributes. All motion is off under prefers-reduced-motion. */
@@ -128,9 +128,9 @@
     if (root.classList.contains('nav-open')) { setDrawer(false); if (toggle) toggle.focus(); }
   });
 
-  /* ---------------- 21+ gate (D7): localStorage marche-age-ok = 1 ---------------- */
+  /* ---------------- 21+ gate (D7): localStorage highgrade-age-ok = 1 ---------------- */
   var gate = $('[data-age-gate]');
-  var KEY = (gate && gate.getAttribute('data-age-key')) || 'marche-age-ok';
+  var KEY = (gate && gate.getAttribute('data-age-key')) || 'highgrade-age-ok';
   var ok = false;
   try { ok = window.localStorage.getItem(KEY) === '1'; } catch (err) { ok = false; }
   if (gate && !ok) {
