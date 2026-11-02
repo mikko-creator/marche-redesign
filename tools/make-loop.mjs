@@ -43,7 +43,7 @@ const label = String(args.label || 'AI-generated video');
 // it in the container tags; tools/ai-label.mjs verify checks it there (lane IMG, 2026-10-12)
 // --what: how the label opens; a camera drift over an AI still (tools/still-loop.mjs) is not AI motion
 const what = String(args.what || 'AI-generated illustrative motion');
-const aiNote = what + ' (' + label + '). IPTC digital source type: http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia. Not footage of Marche, its store, staff, customers, products or brands.';
+const aiNote = what + ' (' + label + '). IPTC digital source type: http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia. Not footage of High Grade, its store, staff, customers, products or brands.';
 
 const probe = JSON.parse(run(FP, ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height,r_frame_rate,nb_frames:format=duration', '-of', 'json', inp]).stdout);
 const T = Number(probe.format.duration);

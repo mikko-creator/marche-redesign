@@ -17,7 +17,7 @@ try {
       if (m.method === 'Log.entryAdded' && m.params.entry.level === 'error') errs.push('log ' + m.params.entry.text.slice(0, 200) + ' ' + (m.params.entry.url || ''));
     });
     await pg.send('Log.enable');
-    await pg.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('marche-age-ok','1')}catch(e){}" });
+    await pg.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('highgrade-age-ok','1')}catch(e){}" });
     await pg.goto(args.base + p, { settle: 1200 });
     const probe = await pg.eval(`({ js: document.documentElement.classList.contains('js'), chooserWired: !!document.querySelector('[data-chooser-open]') })`);
     total += errs.length;

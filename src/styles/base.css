@@ -1,4 +1,4 @@
-/* base.css - "NOIR MARCHÉ" document defaults (FOUNDATION). Reset, the dark ground, type defaults, focus, skip link,
+/* base.css - "NOIR PLATINUM" document defaults (FOUNDATION). Reset, the dark ground, type defaults, focus, skip link,
    layering scale. Colours, type sizes and motion timings all come from tokens.css; the few values added here are the
    layering scale and the chrome heights, which only the chrome and the motion hooks read. */
 :root {
@@ -70,11 +70,11 @@ small { font-size: var(--fs-small); }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 a:hover { color: var(--sun-hot); }
 
-hr { border: 0; height: 1px; background: linear-gradient(90deg, rgba(255, 209, 0, 0.5), rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0)); }
+hr { border: 0; height: 1px; background: linear-gradient(90deg, rgba(211, 214, 219, 0.5), rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0)); }
 
 ::selection { background: var(--sun); color: var(--sun-ink); }
 
-/* focus: a yellow ring everywhere (D8); mouse clicks keep the calm state */
+/* focus: a platinum ring everywhere (D8); mouse clicks keep the calm state */
 :focus { outline: none; }
 :focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; border-radius: 4px; }
 .band--sun :focus-visible, .on-sun :focus-visible { outline-color: var(--sun-ink); }

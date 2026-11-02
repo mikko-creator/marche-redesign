@@ -1,9 +1,9 @@
 {
-  "_note": "Marche facts. The ONLY source is the client's own Figma file 'Marche - Landing/Menu Page' (key Y7fNTMOYeH60Moy9WkweKp), dumped 2026-10-30 to facts/figma-dump.json; every value carries the Figma node it came from. 'status: unconfirmed' values are placeholders or conflicts in the mockup: never render them as facts (see docs/OPEN-DECISIONS.md). Nothing here comes from the site whose architecture was adopted.",
-  "name": "Marche",
-  "wordmark": "MARCHÉ",
+  "_note": "Brand facts. The ONLY source is the Figma design file the pitch started from (key Y7fNTMOYeH60Moy9WkweKp), dumped 2026-10-30 to facts/figma-dump.json; every value carries the Figma node it came from. 'status: unconfirmed' values are placeholders or conflicts in the mockup: never render them as facts (see docs/OPEN-DECISIONS.md). Nothing here comes from the site whose architecture was adopted.",
+  "name": "High Grade",
+  "wordmark": "HIGH GRADE",
   "origin": "https://mikko-creator.github.io/marche-redesign",
-  "ageGateKey": "marche-age-ok",
+  "ageGateKey": "highgrade-age-ok",
   "region": "South Bay, Los Angeles",
   "tagline": {
     "lines": [
@@ -11,7 +11,7 @@
       "At Your Door",
       "45 Minutes or Less"
     ],
-    "source": "Figma 519:2 'Marche Website - 5' (UPDATED mockup), y 6829-7012"
+    "source": "Figma 519:2 (the UPDATED mockup frame), y 6829-7012"
   },
   "hours": {
     "delivery": {
@@ -313,7 +313,7 @@
       "Terms & Conditions",
       "Privacy Policy"
     ],
-    "copyright": "BY Marche. All Rights Reserved.",
+    "copyright": "BY High Grade. All Rights Reserved.",
     "source": "Figma 519:2 footer y 7767-8299 and Frame 1 footer"
   },
   "nav": {
@@ -340,7 +340,7 @@
     "source": "Figma 1:2 'Frame 1' header; 307:1620 'Mobile Slide'"
   },
   "caLaw": {
-    "_note": "General California law, NOT Marche facts. The only law statements any page may make; each with its official source. Not legal advice.",
+    "_note": "General California law, NOT brand facts. The only law statements any page may make; each with its official source. Not legal advice.",
     "reviewed": "October 2026",
     "facts": [
       {

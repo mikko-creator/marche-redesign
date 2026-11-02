@@ -1,4 +1,4 @@
-/* home.css - the home page "/" (HOME lane, "NOIR MARCHÉ"). Classes prefixed h-. Layout and art direction only: the
+/* home.css - the home page "/" (HOME lane, "NOIR PLATINUM"). Classes prefixed h-. Layout and art direction only: the
    grounds, glass, buttons, type, cards and motion hooks are FOUNDATION's components. Never sets opacity / translate /
    filter on [data-reveal], nor transform on [data-depth] / [data-tilt] (those belong to motion.css). */
 
@@ -26,7 +26,7 @@
 .h-hero__film > picture { display: contents; }
 .h-hero__film > picture > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .h-hero__scrim { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 32%, rgba(0, 0, 0, 0.16) 60%, rgba(0, 0, 0, 0) 78%), linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 32%); }
-.h-hero .h-hero__pool { background-image: radial-gradient(44% 66% at var(--lx, 70%) var(--ly, 40%), rgba(255, 209, 0, 0.3) 0%, rgba(255, 170, 0, 0.1) 40%, rgba(0, 0, 0, 0) 72%); mix-blend-mode: screen; }
+.h-hero .h-hero__pool { background-image: radial-gradient(44% 66% at var(--lx, 70%) var(--ly, 40%), rgba(211, 214, 219, 0.3) 0%, rgba(185, 188, 193, 0.1) 40%, rgba(0, 0, 0, 0) 72%); mix-blend-mode: screen; }
 .h-hero__beam { position: absolute; inset: 0; background-image: var(--light-beam); opacity: 0.7; mix-blend-mode: screen; }
 .h-hero__vig { position: absolute; inset: 0; background-image: var(--vignette); }
 
@@ -40,7 +40,7 @@
 .h-hero__promos { margin-top: clamp(14px, 2.4vh, 26px); max-width: 540px; }
 
 .h-hero__stage { position: relative; align-self: stretch; min-height: 340px; }
-.h-hero__halo { position: absolute; left: 55%; bottom: calc(-1 * var(--h-pb)); width: 120%; aspect-ratio: 1; translate: -50% 42%; border-radius: 50%; background-image: radial-gradient(closest-side, rgba(255, 209, 0, 0.24), rgba(255, 170, 0, 0.07) 55%, rgba(0, 0, 0, 0) 76%); pointer-events: none; }
+.h-hero__halo { position: absolute; left: 55%; bottom: calc(-1 * var(--h-pb)); width: 120%; aspect-ratio: 1; translate: -50% 42%; border-radius: 50%; background-image: radial-gradient(closest-side, rgba(211, 214, 219, 0.24), rgba(185, 188, 193, 0.07) 55%, rgba(0, 0, 0, 0) 76%); pointer-events: none; }
 .h-hero__prod { bottom: calc(-1 * (var(--h-pb) + var(--h-protrude))); }
 .h-hero__prod--a { right: -3%; width: clamp(220px, 27vw, 410px); }
 .h-hero__prod--b { right: 42%; width: clamp(170px, 20vw, 300px); bottom: calc(-1 * (var(--h-pb) + var(--h-protrude) * 0.5)); }
@@ -50,7 +50,7 @@
 .h-promos { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px; padding: 6px; border-radius: var(--r-lg); }
 .h-promos__stage { min-width: 0; }
 .h-promo { display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 4px 12px 4px 4px; border-radius: var(--r-md); color: var(--bone); text-decoration: none; }
-.h-promo__ico { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background-color: var(--sun); color: var(--sun-ink); box-shadow: 0 0 22px rgba(255, 209, 0, 0.35); }
+.h-promo__ico { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background-color: var(--sun); color: var(--sun-ink); box-shadow: 0 0 22px rgba(211, 214, 219, 0.35); }
 .h-promo__ico .ico { width: 20px; height: 20px; }
 .h-promo__txt { display: grid; min-width: 0; }
 .h-promo__k { font-family: var(--font-ui); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; line-height: 1.3; text-transform: uppercase; color: var(--sun); }
@@ -93,7 +93,7 @@
 .h-brand:hover .h-brand__art, .h-brand:focus-visible .h-brand__art { translate: 0 -10px; }
 .h-brand__name { font-family: var(--font-display); font-size: var(--fs-2); line-height: 0.9; text-transform: uppercase; }
 
-/* ---------- 5. statement: the one yellow "lights on" band ---------- */
+/* ---------- 5. statement: the one platinum "lights on" band ---------- */
 .h-statement { padding-block: clamp(56px, 7vw, 110px); overflow-x: clip; }
 /* .display's own colour (bone) out-ranks components' `.band--sun :where(.display)`: set the ink here */
 .h-statement .h-statement__t { margin: 0; color: var(--sun-ink); }
@@ -107,8 +107,8 @@
 .h-flowers__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
 .h-tilt { display: flex; }
 .h-tilt > .pcard { flex: 1; }
-.h-flowers__all { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 18px; padding: clamp(22px, 2.6vw, 34px); border-radius: var(--r-lg); border: 1px solid rgba(255, 209, 0, 0.32); background-image: radial-gradient(80% 70% at 20% 85%, rgba(255, 209, 0, 0.14), rgba(0, 0, 0, 0) 70%); color: var(--bone); text-decoration: none; transition: border-color var(--t-med), background-color var(--t-med); }
-.h-flowers__all:hover, .h-flowers__all:focus-visible { border-color: var(--sun); background-color: rgba(255, 209, 0, 0.06); }
+.h-flowers__all { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 18px; padding: clamp(22px, 2.6vw, 34px); border-radius: var(--r-lg); border: 1px solid rgba(211, 214, 219, 0.32); background-image: radial-gradient(80% 70% at 20% 85%, rgba(211, 214, 219, 0.14), rgba(0, 0, 0, 0) 70%); color: var(--bone); text-decoration: none; transition: border-color var(--t-med), background-color var(--t-med); }
+.h-flowers__all:hover, .h-flowers__all:focus-visible { border-color: var(--sun); background-color: rgba(211, 214, 219, 0.06); }
 .h-flowers__all-t { font-family: var(--font-display); font-size: var(--fs-2); line-height: 0.88; text-transform: uppercase; }
 .h-flowers__all .ico { width: 34px; height: 34px; color: var(--sun); transition: translate var(--t-med) var(--ease-out); }
 .h-flowers__all:hover .ico { translate: 6px 0; }
@@ -133,7 +133,7 @@
 .h-deals__item { display: flex; }
 .h-deal { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: 8px; min-height: clamp(220px, 20vw, 280px); padding: clamp(24px, 2.8vw, 38px); color: var(--bone); text-decoration: none; }
 .h-deal__brand { font-family: var(--font-ui); font-size: var(--fs-kicker); font-weight: 600; letter-spacing: var(--track-kicker); text-transform: uppercase; color: var(--bone-2); }
-.h-deal__big { font-family: var(--font-display); font-size: clamp(3.6rem, 1.6rem + 5vw, 7rem); line-height: 0.82; white-space: nowrap; color: var(--sun); text-shadow: 0 0 40px rgba(255, 209, 0, 0.25); }
+.h-deal__big { font-family: var(--font-display); font-size: clamp(3.6rem, 1.6rem + 5vw, 7rem); line-height: 0.82; white-space: nowrap; color: var(--sun); text-shadow: 0 0 40px rgba(211, 214, 219, 0.25); }
 .h-deal__small { display: inline-block; padding: 4px 12px; border-radius: var(--r-pill); background-color: var(--ember); color: var(--white); font-family: var(--font-ui); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.14em; line-height: 1.4; text-transform: uppercase; }
 .h-deal__what { margin-top: auto; padding-top: 10px; padding-right: 36px; font-family: var(--font-display); font-size: var(--fs-3); line-height: 1; text-transform: uppercase; }
 .h-deal__go { position: absolute; right: 24px; bottom: 26px; width: 26px; height: 26px; color: var(--sun); transition: translate var(--t-med) var(--ease-out); }

@@ -148,8 +148,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 209, 0, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 209, 0, 0.35);
+  background: rgba(211, 214, 219, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(211, 214, 219, 0.35);
   color: var(--sun);
   transition: box-shadow var(--t-med) var(--ease-out), background var(--t-med) var(--ease-out);
 }
@@ -161,7 +161,7 @@
 .d-area__go { flex: none; color: var(--sun); transition: transform var(--t-med) var(--ease-out); }
 .d-area__go .ico { width: 22px; height: 22px; }
 .d-area:hover .d-area__go, .d-area:focus-visible .d-area__go { transform: translateX(5px); }
-.d-area:hover .d-area__pin, .d-area:focus-visible .d-area__pin { background: rgba(255, 209, 0, 0.2); box-shadow: inset 0 0 0 1px rgba(255, 209, 0, 0.7), 0 0 22px rgba(255, 209, 0, 0.35); }
+.d-area:hover .d-area__pin, .d-area:focus-visible .d-area__pin { background: rgba(211, 214, 219, 0.2); box-shadow: inset 0 0 0 1px rgba(211, 214, 219, 0.7), 0 0 22px rgba(211, 214, 219, 0.35); }
 .d-area--pickup .d-area__pre { color: var(--bone-2); }
 
 /* ---------- hours band (hub, on .band--sun: black text) ---------- */
@@ -255,7 +255,7 @@
 .d-more__link:hover, .d-more__link:focus-visible { color: var(--sun); padding-left: 10px; }
 .d-more__link:hover .d-more__go, .d-more__link:focus-visible .d-more__go { transform: translateX(5px); }
 
-/* ---------- "Ordering from Marche" amenity grid ---------- */
+/* ---------- "Ordering from High Grade" amenity grid ---------- */
 .d-amen__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .d-amen__item { display: flex; }
 .d-amen__item:first-child { grid-column: span 2; }
@@ -272,7 +272,7 @@
   color: var(--bone);
   text-decoration: none;
 }
-.d-amen__ico { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: auto; border-radius: 14px; background: rgba(255, 209, 0, 0.1); box-shadow: inset 0 0 0 1px rgba(255, 209, 0, 0.3); color: var(--sun); }
+.d-amen__ico { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: auto; border-radius: 14px; background: rgba(211, 214, 219, 0.1); box-shadow: inset 0 0 0 1px rgba(211, 214, 219, 0.3); color: var(--sun); }
 .d-amen__ico .ico { width: 24px; height: 24px; }
 .d-amen__label { margin-top: 18px; font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.5rem, 2vw, 1.95rem); line-height: 1; }
 .d-amen__sub { font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-small); color: var(--bone-2); }
@@ -371,7 +371,7 @@ a.d-source { color: var(--sun); text-decoration: underline; text-underline-offse
 .band.d-404 { position: relative; isolation: isolate; min-height: clamp(460px, 48vw, 680px); display: grid; place-items: center; text-align: center; --lx: 50%; --ly: 30%; }
 .d-404 > .band__clip { position: absolute; inset: 0; overflow: hidden; z-index: -1; pointer-events: none; }
 .d-404__inner { display: flex; flex-direction: column; align-items: center; }
-.d-404__mark { display: block; width: clamp(220px, 42vw, 520px); height: auto; filter: drop-shadow(0 0 30px rgba(255, 209, 0, 0.18)); }
+.d-404__mark { display: block; width: clamp(170px, 30vw, 360px); height: auto; filter: drop-shadow(0 0 30px rgba(211, 214, 219, 0.18)); }
 .d-404__title { margin: clamp(26px, 4vw, 44px) 0 0; font-size: var(--fs-2); line-height: var(--lh-display); }
 .d-404__line { margin: 16px 0 0; color: var(--bone-2); font-size: var(--fs-lede); }
 .d-404__actions { margin-top: 28px; justify-content: center; }
@@ -483,7 +483,7 @@ a.d-source { color: var(--sun); text-decoration: underline; text-underline-offse
   .d-more__link { min-height: 52px; padding: 8px 2px; gap: 10px; font-size: 1.25rem; }
   .d-more__link .ico { width: 20px; height: 20px; }
 
-  /* "Ordering from Marche": compact two-column cards, the first one a single row */
+  /* "Ordering from High Grade": compact two-column cards, the first one a single row */
   .d-amen__grid { gap: 10px; }
   .d-amen__card { min-height: 0; padding: 14px; gap: 4px; justify-content: flex-start; border-radius: var(--r-md); }
   .d-amen__ico { width: 36px; height: 36px; margin-bottom: 0; border-radius: 10px; }

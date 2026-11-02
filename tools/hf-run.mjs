@@ -98,7 +98,7 @@ try {
     tool: 'tools/hf-run.mjs', provider: 'Higgsfield', endpoint, input, requestId: reqId, status: st.status, outputUrl: url,
     bytes: buf.length, sha256: crypto.createHash('sha256').update(buf).digest('hex'),
     file: path.relative(PROJ, out).split(path.sep).join('/'), generatedAt: new Date().toISOString(),
-    provenance: 'AI-generated (Higgsfield). Illustrative motion only: never footage of Marche, its store, staff, customers, products or brands.',
+    provenance: 'AI-generated (Higgsfield). Illustrative motion only: never footage of High Grade, its store, staff, customers, products or brands.',
   };
   fs.writeFileSync(out + '.json', JSON.stringify(rec, null, 2));
   try { fs.unlinkSync(out + '.pending.json'); } catch {}

@@ -67,7 +67,7 @@
 
 /* ---------- about ---------- */
 .p-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.p-stat { display: flex; flex-direction: column; gap: 10px; padding: 22px 4px 0; border-top: 1px solid rgba(255, 209, 0, 0.38); }
+.p-stat { display: flex; flex-direction: column; gap: 10px; padding: 22px 4px 0; border-top: 1px solid rgba(211, 214, 219, 0.38); }
 .p-stat__num { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 0.88; color: var(--sun); }
 .p-stat__num--time { font-size: clamp(2.1rem, 3.4vw, 3.3rem); }
 .p-stat__label { font-family: var(--font-ui); font-weight: 600; font-size: var(--fs-kicker); letter-spacing: var(--track-kicker); text-transform: uppercase; color: var(--bone-2); }
@@ -103,7 +103,7 @@
 .p-offer__title { font-family: var(--font-display); text-transform: uppercase; font-size: var(--fs-3); line-height: 1; }
 .p-offer__sub { font-family: var(--font-ui); font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; font-size: var(--fs-small); color: var(--bone-2); }
 
-/* the page's one "lights on" band: the stats on Marche yellow, black type */
+/* the page's one "lights on" band: the stats on platinum, black type */
 .band--sun .p-stat { border-top-color: rgba(10, 10, 10, 0.32); }
 .band--sun .p-stat__num, .band--sun .p-head__title .accent { color: var(--sun-ink); }
 

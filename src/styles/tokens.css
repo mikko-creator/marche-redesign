@@ -1,8 +1,10 @@
-/* tokens.css - "NOIR MARCHÉ": glassmorphism x tenebrism on Marche's own palette (main session owns this file; lanes
-   may ask for a value change through their report, never edit it). Tenebrism = near-total darkness with ONE warm key
-   light that carves the subject out of the black; here the key light is Marche yellow. Glass = smoked panes whose
-   top-left edge catches that light. Brand colours are the Figma file's: #000, #fff, #ffd100, #222, #edb6c2, #e28197,
-   #bc2426. */
+/* tokens.css - "NOIR PLATINUM": glassmorphism x tenebrism on High Grade's palette (main session owns this file; lanes
+   may ask for a value change through their report, never edit it). Tenebrism = near-total darkness with ONE key light
+   that carves the subject out of the black; here the key light is platinum, the metal of the High Grade logo. Glass =
+   smoked panes whose top-left edge catches that light. Brand colours: #000, #fff, platinum #d3d6db, #222, the pinks
+   #edb6c2 and #e28197, red #bc2426.
+   Rebrand 2026-11-02: every gold became platinum at the SAME luminance (tmp/hg/platinum-css.mjs), so every contrast
+   ratio is unchanged; the token names (--sun, --gold, --glass-sun ...) are kept so no rule had to move. */
 :root {
   /* ---- darkness (grounds) ---- */
   --ink-0: #000000;            /* the void: page ground, vignette edges */
@@ -18,33 +20,33 @@
   --bone-3: #9e9789;           /* tertiary text on dark, >= 13px only (6.5:1 on ink-1) */
   --white: #ffffff;
 
-  /* ---- Marche colour (from the Figma file) ---- */
-  --sun: #ffd100;              /* Marche yellow: the key light, primary CTA, prices */
-  --sun-hot: #ffe25c;          /* highlight inside the light pool */
-  --sun-deep: #d9a900;         /* yellow in shadow, borders on yellow */
-  --sun-ink: #0a0a0a;          /* text on yellow (15.6:1) */
-  --rose: #edb6c2;             /* Marche soft pink */
-  --rose-hot: #e28197;         /* Marche deep pink (accent words, edibles/rewards) */
-  --ember: #bc2426;            /* Marche red: discount numbers only */
-  --gold: #c8a24a;             /* gilt highlight on nugs/jars (decoration only, never text on dark < 24px) */
+  /* ---- High Grade colour ---- */
+  --sun: #d3d6db;              /* platinum: the key light, primary CTA, prices (was the gold #ffd100) */
+  --sun-hot: #e0e3e9;          /* highlight inside the light pool */
+  --sun-deep: #adb0b4;         /* platinum in shadow, borders on platinum */
+  --sun-ink: #0a0a0a;          /* text on platinum (13.6:1) */
+  --rose: #edb6c2;             /* soft pink */
+  --rose-hot: #e28197;         /* deep pink (accent words, edibles/rewards) */
+  --ember: #bc2426;            /* red: discount numbers only */
+  --gold: #a5a7ac;             /* darker platinum highlight on nugs/jars (decoration only, never text on dark < 24px) */
 
   /* ---- the key light: radial pools + raking beams (use on grounds, never under body text) ---- */
-  --light-pool: radial-gradient(60% 55% at var(--lx, 28%) var(--ly, 32%), rgba(255, 209, 0, 0.22) 0%, rgba(255, 170, 0, 0.08) 38%, rgba(0, 0, 0, 0) 70%);
-  --light-pool-soft: radial-gradient(50% 45% at var(--lx, 70%) var(--ly, 40%), rgba(255, 226, 92, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  --light-pool: radial-gradient(60% 55% at var(--lx, 28%) var(--ly, 32%), rgba(211, 214, 219, 0.22) 0%, rgba(185, 188, 193, 0.08) 38%, rgba(0, 0, 0, 0) 70%);
+  --light-pool-soft: radial-gradient(50% 45% at var(--lx, 70%) var(--ly, 40%), rgba(224, 227, 233, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
   --light-rose: radial-gradient(45% 40% at var(--lx, 80%) var(--ly, 70%), rgba(226, 129, 151, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
-  --light-beam: linear-gradient(115deg, rgba(0, 0, 0, 0) 30%, rgba(255, 209, 0, 0.10) 46%, rgba(255, 226, 92, 0.16) 50%, rgba(255, 209, 0, 0.10) 54%, rgba(0, 0, 0, 0) 70%);
+  --light-beam: linear-gradient(115deg, rgba(0, 0, 0, 0) 30%, rgba(211, 214, 219, 0.10) 46%, rgba(224, 227, 233, 0.16) 50%, rgba(211, 214, 219, 0.10) 54%, rgba(0, 0, 0, 0) 70%);
   --vignette: radial-gradient(120% 90% at 50% 40%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 80%, rgba(0, 0, 0, 0.9) 100%);
   --grain-opacity: 0.07;
 
   /* ---- glass (mid plane) ---- */
   --glass-bg: rgba(14, 14, 14, 0.46);            /* smoked pane on dark */
   --glass-bg-strong: rgba(10, 10, 10, 0.72);     /* pane that carries body text */
-  --glass-sun: rgba(255, 209, 0, 0.10);          /* yellow-tinted pane (deals, prices) */
+  --glass-sun: rgba(211, 214, 219, 0.10);          /* platinum-tinted pane (deals, prices) */
   --glass-rose: rgba(237, 182, 194, 0.10);       /* pink-tinted pane (rewards) */
   --glass-blur: 18px;
   --glass-sat: 150%;
   --glass-border: rgba(255, 255, 255, 0.10);
-  --glass-edge-lit: linear-gradient(135deg, rgba(255, 209, 0, 0.75) 0%, rgba(255, 209, 0, 0.18) 22%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.02) 100%); /* border-image of a pane the key light hits from top-left */
+  --glass-edge-lit: linear-gradient(135deg, rgba(211, 214, 219, 0.75) 0%, rgba(211, 214, 219, 0.18) 22%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.02) 100%); /* border-image of a pane the key light hits from top-left */
   --glass-hi: inset 0 1px 0 rgba(255, 255, 255, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   --glass-r: var(--r-lg);
 
@@ -53,8 +55,8 @@
   --shadow-2: 0 18px 40px -12px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-3: 0 40px 80px -20px rgba(0, 0, 0, 0.9), 0 10px 30px rgba(0, 0, 0, 0.6);
   --shadow-cut: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.75)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.6)); /* cut-out products */
-  --rim-sun: drop-shadow(-6px -4px 14px rgba(255, 209, 0, 0.28));   /* key-light rim on a cut-out */
-  --glow-sun: 0 0 0 1px rgba(255, 209, 0, 0.5), 0 10px 40px -6px rgba(255, 209, 0, 0.45);
+  --rim-sun: drop-shadow(-6px -4px 14px rgba(211, 214, 219, 0.28));   /* key-light rim on a cut-out */
+  --glow-sun: 0 0 0 1px rgba(211, 214, 219, 0.5), 0 10px 40px -6px rgba(211, 214, 219, 0.45);
 
   /* ---- type ---- */
   --font-display: 'NATS', 'Oswald', 'Arial Narrow', Impact, sans-serif;     /* ALWAYS uppercase */

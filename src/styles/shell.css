@@ -1,4 +1,4 @@
-/* shell.css - "NOIR MARCHÉ" chrome (FOUNDATION): the utility bar, the smoked-glass main bar (frosted on its OWN
+/* shell.css - "NOIR PLATINUM" chrome (FOUNDATION): the utility bar, the smoked-glass main bar (frosted on its OWN
    ::before: a backdrop-filter on the header itself would blind the mega panels' blur), the glass mega menus with an
    image card each, the drawer below 1024 px, the breadcrumb bar, the footer with its giant cropped wordmark lit by a
    continuous sweep, and the 21+ gate. */
@@ -15,7 +15,7 @@
 }
 .utility__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: var(--utility-h); }
 .utility__promo { display: flex; align-items: center; gap: 12px; min-width: 0; white-space: nowrap; }
-.utility__spark { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 10px 2px rgba(255, 209, 0, 0.55); }
+.utility__spark { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 10px 2px rgba(211, 214, 219, 0.55); }
 .utility__text { color: var(--bone); font-weight: 500; letter-spacing: 0.02em; overflow: hidden; text-overflow: ellipsis; }
 .utility__cta {
   display: inline-flex;
@@ -68,7 +68,7 @@
   z-index: -1;
   pointer-events: none;
   background-color: rgba(5, 5, 5, 0.74);
-  background-image: radial-gradient(40% 160% at 8% 0%, rgba(255, 209, 0, 0.08), rgba(0, 0, 0, 0) 70%);
+  background-image: radial-gradient(40% 160% at 8% 0%, rgba(211, 214, 219, 0.08), rgba(0, 0, 0, 0) 70%);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
   transition: background-color var(--t-med) var(--ease-out), box-shadow var(--t-med);
@@ -81,7 +81,7 @@
   bottom: 0;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(255, 209, 0, 0) 0%, rgba(255, 209, 0, 0.55) 18%, rgba(255, 226, 92, 0.35) 36%, rgba(255, 255, 255, 0.08) 62%, rgba(255, 255, 255, 0.04) 100%);
+  background: linear-gradient(90deg, rgba(211, 214, 219, 0) 0%, rgba(211, 214, 219, 0.55) 18%, rgba(224, 227, 233, 0.35) 36%, rgba(255, 255, 255, 0.08) 62%, rgba(255, 255, 255, 0.04) 100%);
 }
 .site-header.is-scrolled::before, .site-header.has-open-mega::before { background-color: rgba(5, 5, 5, 0.9); box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.9); }
 body.header-over .site-header { margin-bottom: calc(-1 * var(--header-main-h)); }
@@ -89,8 +89,8 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 
 .site-header__inner { display: flex; align-items: center; gap: clamp(14px, 2vw, 32px); height: var(--header-main-h); }
 .brand { display: inline-flex; align-items: center; flex: none; text-decoration: none; padding-block: 8px; }
-.brand__logo { width: auto; height: 26px; transition: filter var(--t-med) var(--ease-out); }
-.brand:hover .brand__logo { filter: drop-shadow(0 0 14px rgba(255, 209, 0, 0.55)); }
+.brand__logo { width: auto; height: 44px; transition: filter var(--t-med) var(--ease-out); }
+.brand:hover .brand__logo { filter: drop-shadow(0 0 14px rgba(211, 214, 219, 0.55)); }
 
 .nav { display: flex; align-items: center; flex: 1 1 auto; min-width: 0; }
 .nav__list { display: flex; align-items: center; gap: 2px; margin: 0 auto; }
@@ -122,7 +122,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   height: 2px;
   border-radius: 2px;
   background: var(--sun);
-  box-shadow: 0 0 10px rgba(255, 209, 0, 0.6);
+  box-shadow: 0 0 10px rgba(211, 214, 219, 0.6);
   transform: scaleX(0);
   transform-origin: 0 50%;
   transition: transform var(--t-med) var(--ease-out);
@@ -150,7 +150,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 .nav__drawer-head, .nav__drawer-foot { display: none; }
 /* the utility bar's promo line, repeated at the top of the drawer: shown only on phones (mobile.css), where the
    utility bar folds away */
-.nav__promo { display: none; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 14px 0 6px; padding: 8px 16px; border-radius: var(--r-md); border: 1px solid rgba(255, 209, 0, 0.24); background-color: rgba(255, 209, 0, 0.07); font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; line-height: 1.4; color: var(--bone); }
+.nav__promo { display: none; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 14px 0 6px; padding: 8px 16px; border-radius: var(--r-md); border: 1px solid rgba(211, 214, 219, 0.24); background-color: rgba(211, 214, 219, 0.07); font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; line-height: 1.4; color: var(--bone); }
 .nav__promo-cta { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--sun); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 .nav__promo-cta .ico { width: 14px; height: 14px; }
 .nav__promo-cta:hover { color: var(--sun-hot); }
@@ -158,7 +158,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 /* 1024-1279: the same bar, tighter, so every item fits */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .site-header__inner { gap: 10px; }
-  .brand__logo { height: 22px; }
+  .brand__logo { height: 40px; }
   .nav__link { padding: 0 10px; letter-spacing: 0.05em; font-size: 0.8125rem; }
   .nav__link::after { left: 10px; right: 10px; }
   .nav__trigger::after { right: 27px; }
@@ -189,7 +189,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
     gap: clamp(28px, 3vw, 56px);
     padding: clamp(28px, 2.6vw, 40px);
     background-color: rgba(8, 8, 8, 0.86);
-    background-image: radial-gradient(42% 90% at 0% 0%, rgba(255, 209, 0, 0.1), rgba(0, 0, 0, 0) 70%);
+    background-image: radial-gradient(42% 90% at 0% 0%, rgba(211, 214, 219, 0.1), rgba(0, 0, 0, 0) 70%);
     -webkit-backdrop-filter: blur(26px) saturate(150%);
     backdrop-filter: blur(26px) saturate(150%);
     box-shadow: var(--glass-hi), 0 44px 90px -30px rgba(0, 0, 0, 0.95);
@@ -261,7 +261,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0) 35%, rgba(255, 244, 200, 0.22) 48%, rgba(255, 209, 0, 0.12) 53%, rgba(255, 255, 255, 0) 65%);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0) 35%, rgba(241, 244, 250, 0.22) 48%, rgba(211, 214, 219, 0.12) 53%, rgba(255, 255, 255, 0) 65%);
   background-size: 260% 100%;
   background-position: 130% 0;
   background-repeat: no-repeat;
@@ -281,7 +281,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 209, 0, 0.5);
+  border: 1px solid rgba(211, 214, 219, 0.5);
   color: var(--sun);
   transition: background-color var(--t-fast), color var(--t-fast), transform var(--t-med) var(--ease-out);
 }
@@ -307,7 +307,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
     background-color: rgba(255, 255, 255, 0.05);
     transition: border-color var(--t-fast), color var(--t-fast);
   }
-  .nav-toggle:hover { color: var(--sun-hot); border-color: rgba(255, 209, 0, 0.6); }
+  .nav-toggle:hover { color: var(--sun-hot); border-color: rgba(211, 214, 219, 0.6); }
   .nav-toggle .ico { width: 22px; height: 22px; }
   html.nav-open .site-header { z-index: calc(var(--z-scrim) + 1); }
   .nav {
@@ -323,8 +323,8 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
     overscroll-behavior: contain;
     padding: 0 22px 36px;
     background-color: var(--ink-1);
-    background-image: radial-gradient(90% 40% at 0% 0%, rgba(255, 209, 0, 0.12), rgba(0, 0, 0, 0) 70%);
-    border-left: 1px solid rgba(255, 209, 0, 0.22);
+    background-image: radial-gradient(90% 40% at 0% 0%, rgba(211, 214, 219, 0.12), rgba(0, 0, 0, 0) 70%);
+    border-left: 1px solid rgba(211, 214, 219, 0.22);
     box-shadow: -30px 0 80px rgba(0, 0, 0, 0.6);
     transform: translateX(105%);
     visibility: hidden;
@@ -341,7 +341,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   .nav__drawer-title { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-ui); font-size: var(--fs-kicker); font-weight: 600; letter-spacing: var(--track-kicker); text-transform: uppercase; color: var(--bone-2); }
   .nav__drawer-title::before { content: ""; width: 24px; height: 2px; background: var(--sun); }
   .nav__close { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; color: var(--bone); border: 1px solid rgba(255, 255, 255, 0.18); }
-  .nav__close:hover { color: var(--sun-hot); border-color: rgba(255, 209, 0, 0.6); }
+  .nav__close:hover { color: var(--sun-hot); border-color: rgba(211, 214, 219, 0.6); }
   .nav__close .ico { width: 20px; height: 20px; }
   .nav__list { flex-direction: column; align-items: stretch; gap: 0; margin: 8px 0 0; }
   .nav__item { display: block; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
@@ -411,8 +411,8 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(40% 60% at 12% 0%, rgba(255, 209, 0, 0.12), rgba(0, 0, 0, 0) 70%),
-    radial-gradient(60% 50% at 50% 100%, rgba(255, 209, 0, 0.07), rgba(0, 0, 0, 0) 70%);
+    radial-gradient(40% 60% at 12% 0%, rgba(211, 214, 219, 0.12), rgba(0, 0, 0, 0) 70%),
+    radial-gradient(60% 50% at 50% 100%, rgba(211, 214, 219, 0.07), rgba(0, 0, 0, 0) 70%);
 }
 .footer__top {
   display: flex;
@@ -424,7 +424,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .footer__brand { display: grid; gap: 20px; }
-.brand--footer .brand__logo { height: clamp(30px, 3vw, 42px); }
+.brand--footer .brand__logo { height: clamp(60px, 6vw, 88px); }
 .footer__tag { font-family: var(--font-display); font-size: clamp(1.9rem, 1.2rem + 2vw, 3rem); line-height: 0.9; text-transform: uppercase; color: var(--bone); max-width: 20ch; }
 .footer__tag > span { display: block; }
 .footer__cols {
@@ -485,7 +485,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
 .footer__legal-links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 0; }
 .footer__legal-links a { display: inline-flex; align-items: center; min-height: 32px; color: var(--bone-2); text-decoration: none; }
 .footer__legal-links a:hover { color: var(--sun-hot); text-decoration: underline; text-underline-offset: 4px; }
-/* the giant cropped wordmark: the real logo as a mask, dark on dark, lit by a continuous fast sweep (operator,
+/* the giant wordmark: the logo's two words on one line as a mask, dark on dark, lit by a continuous fast sweep (operator,
    2026-10-30: "continuous fast loop") */
 .footer__mark {
   position: relative;
@@ -499,11 +499,11 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   left: 50%;
   top: 0;
   width: min(100% - 2 * var(--gutter), var(--wrap-wide));
-  aspect-ratio: 2677 / 471;
+  aspect-ratio: 2182 / 285;
   translate: -50% 0;
   background-color: rgba(255, 255, 255, 0.045);
-  -webkit-mask: url("/assets/brand/marche-logo-white.png") center top / 100% auto no-repeat;
-  mask: url("/assets/brand/marche-logo-white.png") center top / 100% auto no-repeat;
+  -webkit-mask: url("/assets/brand/highgrade-wordmark.png") center top / 100% auto no-repeat;
+  mask: url("/assets/brand/highgrade-wordmark.png") center top / 100% auto no-repeat;
 }
 /* The light: a strip twice the wordmark's width holding one soft band per wordmark width, slid at constant speed by
    exactly one band spacing per cycle. A new band enters as the last one leaves, so the light never stops and the wrap
@@ -515,14 +515,14 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   bottom: 0;
   left: 0;
   width: 200%;
-  background: linear-gradient(100deg, rgba(255, 209, 0, 0) 30%, rgba(255, 226, 92, 0.5) 50%, rgba(255, 209, 0, 0) 70%) 0 0 / 50% 100% repeat-x;
+  background: linear-gradient(100deg, rgba(211, 214, 219, 0) 30%, rgba(224, 227, 233, 0.5) 50%, rgba(211, 214, 219, 0) 70%) 0 0 / 50% 100% repeat-x;
   animation: noir-sweep 2s linear infinite;
 }
 .footer__mark.is-paused .footer__mark-word::before { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .footer__mark-word::before { display: none; } }
-/* phones: the mask from the 1080 px WebP cut (7 KB) instead of the 2677 px master PNG (30 KB) */
+/* phones: the mask from the 1080 px WebP (11 KB) instead of the 2182 px PNG (33 KB) */
 @media (max-width: 480px) {
-  .footer__mark-word { -webkit-mask-image: url("/assets/brand/marche-logo-white-1080.webp"); mask-image: url("/assets/brand/marche-logo-white-1080.webp"); }
+  .footer__mark-word { -webkit-mask-image: url("/assets/brand/highgrade-wordmark-1080.webp"); mask-image: url("/assets/brand/highgrade-wordmark-1080.webp"); }
 }
 
 /* ======================================================================== 21+ gate */
@@ -535,7 +535,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   padding: 20px;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.72);
-  background-image: radial-gradient(50% 50% at 30% 25%, rgba(255, 209, 0, 0.16), rgba(0, 0, 0, 0) 70%);
+  background-image: radial-gradient(50% 50% at 30% 25%, rgba(211, 214, 219, 0.16), rgba(0, 0, 0, 0) 70%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
   backdrop-filter: blur(14px) saturate(120%);
 }
@@ -548,7 +548,7 @@ body.header-over .site-header:not(.is-scrolled):not(.has-open-mega)::before { ba
   text-align: center;
   background-color: rgba(8, 8, 8, 0.82);
 }
-.age-gate__logo { width: min(220px, 70%); height: auto; margin-bottom: 10px; filter: drop-shadow(0 0 22px rgba(255, 209, 0, 0.25)); }
+.age-gate__logo { width: min(220px, 70%); height: auto; margin-bottom: 10px; filter: drop-shadow(0 0 22px rgba(211, 214, 219, 0.25)); }
 .age-gate__q { font-size: clamp(2.3rem, 1.8rem + 2vw, 3.2rem); line-height: 0.9; }
 .age-gate__d { color: var(--bone-2); }
 .age-gate__actions { justify-content: center; margin-top: 8px; }

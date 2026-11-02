@@ -95,7 +95,7 @@ function out(ctx, { path, name, description, main, crumbs, bodyClass }) {
 const arrow = () => icon('arrow', 's-ico');
 const joinList = (xs) => (xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1]);
 
-// product card (FOUNDATION .pcard): cut-out photo, NATS name lines, yellow price exactly as written, round "+" demo button
+// product card (FOUNDATION .pcard): cut-out photo, NATS name lines, platinum price exactly as written, round "+" demo button
 function pcard(ctx, p, i, { eager = false } = {}) {
   return `<li class="s-grid__item" data-reveal style="--i:${i}">
 <article class="pcard" data-tilt>

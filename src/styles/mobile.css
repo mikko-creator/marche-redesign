@@ -1,4 +1,4 @@
-/* mobile.css - "NOIR MARCHÉ" phone + tablet pass for the chrome and the shared components (FOUNDATION; loaded after
+/* mobile.css - "NOIR PLATINUM" phone + tablet pass for the chrome and the shared components (FOUNDATION; loaded after
    the lane sheets, before fix.css). The drawer itself lives in shell.css (below 1024 px). Here: lighter glass (blur
    10 px), the type steps, 44 px tap targets, smaller protrusions and no sideways overflow. */
 
@@ -33,7 +33,7 @@
   .utility__cta .ico { display: none; }
 
   /* main bar */
-  .brand__logo { height: 21px; }
+  .brand__logo { height: 38px; }
   .header-cta { min-height: 44px; padding: 0 16px; font-size: 0.8125rem; letter-spacing: 0.06em; }
   .nav-toggle { width: 44px; height: 44px; }
   .nav { padding: 0 18px 32px; }
@@ -91,7 +91,7 @@
 /* ---------- small phones ---------- */
 @media (max-width: 379.98px) {
   .header-cta { padding: 0 12px; }
-  .brand__logo { height: 18px; }
+  .brand__logo { height: 34px; }
 }
 
 /* ---------- touch screens: no hover-only lifts that stick after a tap ---------- */

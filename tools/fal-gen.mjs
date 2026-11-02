@@ -36,7 +36,7 @@ const RAWDIR = path.join(PROJ, 'tmp/img/raw');
 const REJDIR = path.join(PROJ, 'tmp/img/rejected');
 const RECORD = path.join(PROJ, 'audit/generated-images.json');
 const rec = fs.existsSync(RECORD) ? JSON.parse(fs.readFileSync(RECORD, 'utf8'))
-  : { schema: 'site-reforge/generated-images@2', provider: 'fal.ai', note: 'Illustrative industry imagery ADDED by the redesign. None stands in for a real person, place, product, brand or result of Marche; every alt describes what is depicted.', images: [], failures: [] };
+  : { schema: 'site-reforge/generated-images@2', provider: 'fal.ai', note: 'Illustrative industry imagery ADDED by the redesign. None stands in for a real person, place, product, brand or result of High Grade; every alt describes what is depicted.', images: [], failures: [] };
 rec.spend = rec.spend || { ultraCalls: 0, cutoutCalls: 0, otherCalls: 0, calls: [] };
 const CAP_ULTRA = Number(args['cap-ultra'] || 140), CAP_CUT = Number(args['cap-cutout'] || 4);
 const PRICE = { ultra: 0.06, cutout: 0.005 };   // fal list prices as recorded in tmp/panel/kit/README.md; UNVERIFIED against the invoice
@@ -182,7 +182,7 @@ async function one(item) {
     // the sidecar: provenance + the review slot (PENDING until the by-eye review)
     const sidecar = {
       tool: 'tools/fal-gen.mjs', slot: item.id, file: finalRel, iptcDigitalSourceType: DST_URI,
-      provenance: 'AI-generated (fal.ai). Illustrative only: never a photograph of Marche, its store, staff, customers, products or brands.',
+      provenance: 'AI-generated (fal.ai). Illustrative only: never a photograph of High Grade, its store, staff, customers, products or brands.',
       model, prompt, input: entry.input, seed: entry.seed, requestId: entry.requestId, cutout: cut, width: entry.width, height: entry.height,
       sha256: entry.sha256, raw: entry.raw, attempt: entry.attempt, generatedAt: entry.generatedAt,
       review: { verdict: 'PENDING', reason: null },

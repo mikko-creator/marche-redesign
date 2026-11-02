@@ -1,4 +1,4 @@
-/* motion.css - "NOIR MARCHÉ" motion hooks (FOUNDATION; site.js drives them). Every effect is off under
+/* motion.css - "NOIR PLATINUM" motion hooks (FOUNDATION; site.js drives them). Every effect is off under
    prefers-reduced-motion. Reveals move with the individual `translate` property (never `transform`), so hover
    transforms on the same element keep working; their end state has no filter and full opacity, so glass inside a
    revealed block blurs what is behind it again.
@@ -48,7 +48,7 @@ html.js [data-depth].is-moving { will-change: transform; }
   transform-style: preserve-3d;
 }
 [data-tilt].is-tilting { transition: transform 0.12s linear; }
-/* (extra) .glint: an inner layer that shows a soft yellow light where the pointer is on a [data-tilt] element */
+/* (extra) .glint: an inner layer that shows a soft platinum light where the pointer is on a [data-tilt] element */
 .glint {
   position: absolute;
   inset: 0;
@@ -56,7 +56,7 @@ html.js [data-depth].is-moving { will-change: transform; }
   border-radius: inherit;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 226, 92, 0.22), rgba(255, 209, 0, 0.06) 35%, rgba(0, 0, 0, 0) 60%);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(224, 227, 233, 0.22), rgba(211, 214, 219, 0.06) 35%, rgba(0, 0, 0, 0) 60%);
   mix-blend-mode: screen;
   transition: opacity 0.4s var(--ease-out);
 }
@@ -100,7 +100,7 @@ html.js [data-rotator].is-rotator [data-slide].is-active { opacity: 1; visibilit
   transition: width var(--t-med) var(--ease-out), background-color var(--t-med);
 }
 .rotator__dot:hover::before { background: rgba(246, 242, 234, 0.7); }
-.rotator__dot[aria-current="true"]::before { width: 28px; background: var(--sun); box-shadow: 0 0 12px rgba(255, 209, 0, 0.6); }
+.rotator__dot[aria-current="true"]::before { width: 28px; background: var(--sun); box-shadow: 0 0 12px rgba(211, 214, 219, 0.6); }
 .band--sun .rotator__dot::before { background: rgba(10, 10, 10, 0.3); }
 .band--sun .rotator__dot[aria-current="true"]::before { background: var(--sun-ink); box-shadow: none; }
 

@@ -184,13 +184,13 @@ function faqHtml(items) {
 
 function render404(ctx) {
   const path = '/404.html';
-  const title = 'Page Not Found | Marche';
-  const description = 'This page does not exist on the Marche site. Go to the home page or the shop.';
+  const title = 'Page Not Found | High Grade';
+  const description = 'This page does not exist on the High Grade site. Go to the home page or the shop.';
   const main = `
 <section class="band band--void d-404" data-spot aria-labelledby="d-h1">
   <div class="band__clip" aria-hidden="true"><span class="d-hero__pool d-404__pool"></span></div>
   <div class="wrap wrap--narrow d-404__inner">
-    <img class="d-404__mark" src="/assets/brand/marche-logo-white-722.webp" srcset="${LOGO_SRCSET}" sizes="(max-width: 523px) 220px, (max-width: 1238px) 42vw, 520px" width="2677" height="471" alt="${escA(ctx.site.wordmark)}" decoding="async">
+    <img class="d-404__mark" src="/assets/brand/highgrade-logo-620.webp" srcset="${LOGO_SRCSET}" sizes="(max-width: 566px) 170px, (max-width: 1200px) 30vw, 360px" width="1240" height="584" alt="${escA(ctx.site.wordmark)}" decoding="async">
     <h1 class="display d-404__title" id="d-h1">Page <span class="accent">not found</span></h1>
     <p class="d-404__line">This page is not on the menu.</p>
     <div class="btn-row d-404__actions">${btn(P.home, 'Home')}${btn(P.shop, 'Shop', 'btn btn--ghost')}</div>
@@ -206,7 +206,7 @@ function render404(ctx) {
 function renderHub(ctx, F, A) {
   const path = P.hub;
   const crumbs = [CRUMB.home, [path, 'Delivery areas']];
-  const m = meta(ctx, path, 'Delivery Areas | Marche', `Marche weed delivery areas in the ${F.region}: ${A.map((a) => a.name).join(', ')}. ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}.`);
+  const m = meta(ctx, path, 'Delivery Areas | High Grade', `High Grade weed delivery areas in the ${F.region}: ${A.map((a) => a.name).join(', ')}. ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}.`);
   const main = `
 ${hero({
     crumbs,
@@ -247,7 +247,7 @@ ${hero({
 function renderState(ctx, F, A) {
   const path = P.ca;
   const crumbs = [CRUMB.home, CRUMB.hub, [path, 'California']];
-  const m = meta(ctx, path, 'Weed Delivery in the South Bay, CA | Marche', `Weed delivery in the ${F.region}: ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}, ${F.fast}. Delivery areas: ${A.map((a) => a.name).join(', ')}.`);
+  const m = meta(ctx, path, 'Weed Delivery in the South Bay, CA | High Grade', `Weed delivery in the ${F.region}: ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}, ${F.fast}. Delivery areas: ${A.map((a) => a.name).join(', ')}.`);
   const dealsMini = F.deals.map((d) => `<li>${esc(d.big)}${d.small ? ' ' + esc(d.small) : ''} ${esc(d.what)}${d.brandLine ? ` <span class="d-mini__brand">(${esc(d.brandLine)})</span>` : ''}</li>`).join('');
   const main = `
 ${hero({
@@ -297,7 +297,7 @@ function renderArea(ctx, F, A, a, idx) {
   const path = a.path;
   const city = a.name;
   const crumbs = [CRUMB.home, CRUMB.hub, CRUMB.ca, [path, city]];
-  const m = meta(ctx, path, `Weed Delivery in ${city}, CA | Marche`, `Weed delivery in ${city}, ${F.region}: ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}, ${F.fast}. Order from the Marche menu.`);
+  const m = meta(ctx, path, `Weed Delivery in ${city}, CA | High Grade`, `Weed delivery in ${city}, ${F.region}: ${F.delivery.label} ${F.delivery.value}, ${F.pickup.label} ${F.pickup.value}, ${F.fast}. Order from the High Grade menu.`);
   const others = A.filter((x) => x.slug !== a.slug);
   const amen = [
     ['id', 'Valid ID, 21+', '', ''],
@@ -311,7 +311,7 @@ function renderArea(ctx, F, A, a, idx) {
   const faqs = [
     [`What are the delivery hours in ${city}?`, `<p>${esc(F.delivery.label)}: ${esc(F.delivery.value)}. ${esc(F.pickup.label)}: ${esc(F.pickup.value)}.</p>`],
     [`How fast is weed delivery in ${city}?`, `<p>${esc(F.fast)}, at your door.</p>`],
-    ['Which areas does Marche deliver to?', `<p>${esc(listJoin(A.map((x) => x.name)))}, in the ${esc(F.region)}.</p><p>${arrowLink(P.hub, 'All delivery areas')}</p>`],
+    ['Which areas does High Grade deliver to?', `<p>${esc(listJoin(A.map((x) => x.name)))}, in the ${esc(F.region)}.</p><p>${arrowLink(P.hub, 'All delivery areas')}</p>`],
     [`Do I need ID for weed delivery in ${city}?`, `<p>${esc(F.idLaw.text)} ${source(F.idLaw.source)}</p>`],
     ['Is there a medical menu?', `<p>Yes: Medical is one of the menu categories. ${esc(F.medLaw.text)} ${source(F.medLaw.source)}</p><p>${arrowLink('/shop/medical/', 'Medical menu')} ${arrowLink(P.card, 'Getting a Medical Card')}</p>`],
     ['Is there an offer for first-time customers?', `<p>${esc(F.first.sub)}: ${esc(F.first.title)}.</p><p>${arrowLink(P.first, 'Rewards')}</p>`],
@@ -363,7 +363,7 @@ ${hero({
 </section>
 <section class="band band--beam d-amen" aria-labelledby="d-amen-h">
   <div class="wrap">
-    ${head2({ kicker: esc(F.region), title: `Ordering from <span class="accent">Marche</span>`, id: 'd-amen-h' })}
+    ${head2({ kicker: esc(F.region), title: `Ordering from <span class="accent">High Grade</span>`, id: 'd-amen-h' })}
     <ul class="d-amen__grid" role="list">
       ${amen.map(([ic, label, sub, u], i) => {
     const inner = `<span class="d-amen__ico">${icon(ic)}</span><span class="d-amen__label">${esc(label)}</span>${sub ? `<span class="d-amen__sub">${esc(sub)}</span>` : ''}`;
@@ -401,13 +401,13 @@ ${hero({
 function renderGuides(ctx, F, A) {
   const path = P.guides;
   const crumbs = [CRUMB.home, [path, 'Delivery Guide']];
-  const m = meta(ctx, path, 'Delivery Guide | Marche', `Marche delivery guides for the ${F.region}: ${A.map((a) => a.name).join(', ')}. ${F.delivery.label} ${F.delivery.value}, ${F.fast}.`);
+  const m = meta(ctx, path, 'Delivery Guide | High Grade', `High Grade delivery guides for the ${F.region}: ${A.map((a) => a.name).join(', ')}. ${F.delivery.label} ${F.delivery.value}, ${F.fast}.`);
   const main = `
 ${hero({
     crumbs,
     kicker: 'Resources',
     title: `Delivery <span class="accent">guide</span>`,
-    lede: `How Marche delivery works, and one guide per area of the ${esc(F.region)}.`,
+    lede: `How High Grade delivery works, and one guide per area of the ${esc(F.region)}.`,
     actions: `${btn(P.shop, ctx.ia.cta.label)}${btn(P.hub, 'Delivery areas', 'btn btn--ghost')}`,
     art: ART[2],
   })}

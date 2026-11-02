@@ -6,3 +6,4 @@ audit export-ignore
 tmp export-ignore
 facts export-ignore
 project.json export-ignore
+assets/figma export-ignore

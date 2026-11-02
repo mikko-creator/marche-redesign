@@ -117,7 +117,7 @@ try {
     const pg = await b.newPage({ width: w, height: HEIGHT[w] || 800, mobile: true });
     await pg.send('Emulation.setDeviceMetricsOverride', { width: w, height: HEIGHT[w] || 800, deviceScaleFactor: 3, mobile: true });
     await pg.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
-    await pg.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('marche-age-ok','1')}catch(e){}" });
+    await pg.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('highgrade-age-ok','1')}catch(e){}" });
     await pg.send('Network.setCacheDisabled', { cacheDisabled: true });
     // control first: the instrument must see a planted overflow
     await pg.goto(BASE + CONTROL_PATH, { settle: 200 });

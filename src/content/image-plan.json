@@ -1,5 +1,5 @@
 {
- "about": "Generated industry imagery for the Marche redesign pitch (IMAGERY lane, 2026-10-30). Twelve illustrative stills in one tenebrist mood: shot on black, one hard warm golden-yellow key light from the upper left, deep shadow to the lower right, generous black negative space for type. None stands in for a real person, place, product, brand or result of Marche; every alt describes what is depicted. Marche's own art comes from its Figma file (assets/photos, assets/brand). Run: node tools/fal-gen.mjs --plan src/content/image-plan.json --key-file <path outside the project> --concurrency 3 --cap-ultra 24.",
+ "about": "Generated industry imagery for the High Grade redesign pitch (IMAGERY lane, 2026-10-30; rebranded from an earlier pitch on 2026-11-02, when nine stills were colour-graded so their gold light reads as platinum: tmp/hg/regrade.py in the workspace). Twelve illustrative stills in one tenebrist mood: shot on black, one hard warm golden-yellow key light from the upper left, deep shadow to the lower right, generous black negative space for type. None stands in for a real person, place, product, brand or result of High Grade; every alt describes what is depicted. The brand art and product photos come from the Figma design file the pitch started from (assets/photos); the logo is the client's own (assets/brand). Run: node tools/fal-gen.mjs --plan src/content/image-plan.json --key-file <path outside the project> --concurrency 3 --cap-ultra 24.",
  "defaults": {
   "model": "fal-ai/flux-pro/v1.1-ultra",
   "input": {
@@ -21,7 +21,7 @@
    "input": {
     "aspect_ratio": "16:9"
    },
-   "alt": "A single cured cannabis bud on a black surface, its trichomes catching a warm golden light from the upper left, with a thin wisp of smoke in the dark.",
+   "alt": "A single cured cannabis bud on a black surface, its trichomes catching a cool platinum light from the upper left, with a thin wisp of smoke in the dark.",
    "prompt": "Tenebrist editorial still-life photograph: a single dense cured cannabis flower bud resting on a black surface, its frosty resin trichomes glinting like tiny glass beads where the light lands, fine twisted orange pistils, deep green and violet calyxes, a thin wisp of pale smoke drifting through the light behind it. Composition: the bud sits right of centre and fills about a third of the frame width, wide black negative space across the whole left half of the frame. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   },
   {
@@ -51,7 +51,7 @@
    "input": {
     "aspect_ratio": "3:2"
    },
-   "alt": "Plain glass jars filled with cured cannabis flower on a slab of black stone, caught in a single pool of warm golden light.",
+   "alt": "Plain glass jars filled with cured cannabis flower on a slab of black stone, caught in a single pool of cool platinum light.",
    "prompt": "Tenebrist editorial still-life photograph: three clear glass jars with plain black screw lids, filled with cured cannabis flower buds, standing in a loose row on a slab of black stone, caught in one pool of warm golden light; the glass is smooth and clear with no labels and no stickers, small glints of light on the rims and lids, the buds inside lit green and gold. Composition: the jars stand right of centre, black negative space on the left. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   },
   {
@@ -128,7 +128,7 @@
    "input": {
     "aspect_ratio": "16:9"
    },
-   "alt": "Soft smoke drifting through a single beam of warm golden light in total darkness.",
+   "alt": "Soft smoke drifting through a single beam of cool platinum light in total darkness.",
    "prompt": "Tenebrist atmospheric photograph: a single narrow shaft of warm golden-yellow light slanting down from the top of the frame just left of centre toward the lower right, through total darkness; soft volumetric wisps of pale smoke drift and curl slowly through the beam, lit gold where they cross the light and fading into black everywhere else. Composition: the beam and the smoke occupy the centre and the right of the frame, the left third stays deep black negative space. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, deep shadows falling to the lower right, crisp detail where the light lands, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   },
   {
@@ -145,7 +145,7 @@
    "input": {
     "aspect_ratio": "16:9"
    },
-   "alt": "Silhouettes of tall palm trees against a deep night sky with a low warm gold glow along the horizon.",
+   "alt": "Silhouettes of tall palm trees against a deep night sky with a low silver glow along the horizon.",
    "prompt": "Tenebrist night photograph: silhouettes of three tall slender palm trees against a deep blue-black night sky after dusk, a low band of warm gold and amber glow along a flat empty horizon near the ocean, a few faint stars; nothing else in the scene: no buildings, no skyline, no streetlights, no signs, no landmark. Composition: the palms stand in the right third of the frame, the left two thirds are open dark sky as black negative space; the sky is darkest at the top and warmest low on the horizon toward the left. Near-total darkness, crisp black silhouettes, a subtle warm rim of gold along the palm fronds, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   },
   {
@@ -174,7 +174,7 @@
    "input": {
     "aspect_ratio": "4:5"
    },
-   "alt": "A single cannabis fan leaf on pure black, its serrated edges rimmed with warm gold light.",
+   "alt": "A single cannabis fan leaf on pure black, its serrated edges rimmed with platinum light.",
    "prompt": "Tenebrist studio photograph for compositing: a single cannabis fan leaf with seven long serrated leaflets spreading from a short stem, floating alone in a pure black void, centred with a generous black margin on all sides, no surface and no cast shadow; a hard warm golden key light from the upper left rims the serrated edges in gold, the deep green leaf falls into shadow toward the lower right. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, crisp detail where the light lands, a subtle warm rim light on the edges, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   },
   {
@@ -188,7 +188,7 @@
    "input": {
     "aspect_ratio": "16:9"
    },
-   "alt": "Fine gold dust drifting in a shaft of warm light against black.",
+   "alt": "Fine platinum dust drifting in a shaft of cool light against black.",
    "prompt": "Tenebrist abstract atmospheric photograph: fine golden dust particles drifting and glinting in a soft shaft of warm golden-yellow light that slants down from the upper left through total darkness, sparse sharp specks and soft out-of-focus bokeh motes, the shaft fading out toward the centre of the frame; most of the frame is deep black. Composition: the particles gather along the diagonal light shaft from the upper left toward the centre, the lower right and the right edge stay black. Shot in near-total darkness on a pure black background, one hard warm golden-yellow key light from the upper left in Caravaggio chiaroscuro, crisp detail where the light lands, fine film grain, clean modern premium mood, accents of rich sunflower yellow and soft gold, never neon, never iridescent"
   }
  ]

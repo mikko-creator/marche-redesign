@@ -1,4 +1,4 @@
-// pages.mjs - PAGES lane, "NOIR MARCHÉ": /about-us/ /contact/ /faq/ /events/ /careers/ /blog/ (+ /blog/<cat>/ x3)
+// pages.mjs - PAGES lane, "NOIR PLATINUM": /about-us/ /contact/ /faq/ /events/ /careers/ /blog/ (+ /blog/<cat>/ x3)
 // /getting-a-medical-card/ /cannabis-laws-by-state/ (+ /california/) /terms-and-conditions/ /privacy-policy/
 // /disclaimer/. Every visible fact is read from ctx.site (site.json) / ctx.ia (ia.json) at render time - nothing is
 // retyped here except neutral glue (labels, one-line intros, empty states). Law and medical-card statements come only
@@ -268,7 +268,7 @@ function events(ctx) {
   const path = '/events/';
   const crumbs = [['/', 'Home'], [path, 'Events']];
   const h = hero(ctx, {
-    crumbs, kick: 'Events', title: `Marche <span class="accent">events</span>`,
+    crumbs, kick: 'Events', title: `High Grade <span class="accent">events</span>`,
     lede: `Events from ${esc(s.name)} will be listed here.`,
     ctas: [btn('#insider', s.insider.button), btn('/shop/', 'Browse the menu', 'btn--glass')],
     bg: 'g-gold-dust', cut: heroCut(ctx, 'high-90s-preroll-pack.webp', 'p-hero__cut--events'), mod: 'p-hero--events',
@@ -288,9 +288,9 @@ function careers(ctx) {
   const path = '/careers/';
   const crumbs = [['/', 'Home'], [path, 'Careers']];
   const h = hero(ctx, {
-    crumbs, kick: 'Careers', title: `Work <span class="accent">with Marche</span>`,
+    crumbs, kick: 'Careers', title: `Work <span class="accent">with High Grade</span>`,
     lede: `Interested in working with ${esc(s.name)}? Send your details with the application form below.`,
-    ctas: [btn('#application', 'Application'), btn('/about-us/', 'About Marche', 'btn--glass')],
+    ctas: [btn('#application', 'Application'), btn('/about-us/', 'About High Grade', 'btn--glass')],
     bg: 'g-smoke-beam', mod: 'p-hero--careers',
   });
   const form = formWith({ id: 'application-form', fields: ['Name', 'Email', 'Phone', 'Position of interest', 'Message'], button: 'Submit application' }, { area: ['Message'], tel: ['Phone'] });
@@ -298,7 +298,7 @@ function careers(ctx) {
 ${band(`<div class="wrap wrap--narrow"><div class="p-empty glass glass--strong glass--lit" data-reveal>${icon('user', 'p-empty__ico')}<h2 class="display p-empty__title" id="careers-open">Open <span class="accent">positions</span></h2><p class="p-empty__line">No openings are posted yet.</p></div></div>`, { tone: 'lit', mod: 'p-band--empty', label: 'careers-open', clip: pool('p-pool--center') })}
 <section class="band band--void p-band p-band--application" id="application" aria-labelledby="application-title"><div class="band__clip" aria-hidden="true"><span class="band__bg p-band__art">${gimg('g-gold-dust', { alt: '', sizes: '100vw', cls: 'screen p-band__art-img' })}</span><span class="grain"></span></div>
 <div class="wrap p-apply">
-<div class="p-apply__copy" data-reveal>${kicker('Application')}<h2 class="display p-apply__title" id="application-title">Apply <span class="accent">to Marche</span></h2><p class="p-apply__line">Name, email, phone, the position you are interested in and a short message.</p></div>
+<div class="p-apply__copy" data-reveal>${kicker('Application')}<h2 class="display p-apply__title" id="application-title">Apply <span class="accent">to High Grade</span></h2><p class="p-apply__line">Name, email, phone, the position you are interested in and a short message.</p></div>
 <div class="p-apply__form glass glass--strong glass--lit" data-reveal style="--i:1">${form}</div>
 </div></section>`;
   return out(ctx, {
@@ -340,7 +340,7 @@ function blogHub(ctx) {
   const crumbs = [['/', 'Home'], [path, 'Blog']];
   const feat = (ctx.ia.nav.find((n) => n.feature && n.feature.href === '/blog/') || {}).feature || { line: '' };
   const h = hero(ctx, {
-    crumbs, kick: 'Resources', title: `The Marche <span class="accent">blog</span>`,
+    crumbs, kick: 'Resources', title: `The High Grade <span class="accent">blog</span>`,
     lede: `${esc(feat.line)}, delivery in the ${esc(ctx.site.region)} and California cannabis law.`,
     ctas: [blogChips(ctx, '')],
     bg: 'g-smoke-beam', cut: heroCut(ctx, 'thc-crescendo.webp', 'p-hero__cut--blog'), mod: 'p-hero--blog',

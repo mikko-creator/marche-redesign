@@ -94,7 +94,7 @@ try {
     requestId: gen.requestId, seed: gen.result.seed ?? null, width: img.width || null, height: img.height || null,
     contentType: img.content_type || null, bytes: buf.length, sha256: crypto.createHash('sha256').update(buf).digest('hex'),
     file: path.relative(PROJ, out).split(path.sep).join('/'), generatedAt: new Date().toISOString(),
-    provenance: 'AI-generated (fal.ai). Illustrative only: never a photograph of Marche, its store, staff, customers, products or brands.',
+    provenance: 'AI-generated (fal.ai). Illustrative only: never a photograph of High Grade, its store, staff, customers, products or brands.',
   };
   if (args.cutout) {
     const cutFile = out.replace(/\.[a-z0-9]+$/i, '') + '.cut.png';

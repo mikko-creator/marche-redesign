@@ -29,7 +29,7 @@ const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const XMP = fs.readFileSync(path.join(PROJ, 'tools/ai-label.xmp'), 'utf8').trim();
 export const NEEDLE = 'trainedAlgorithmicMedia';
 export const DST_URI = 'http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia';
-export const VIDEO_NOTE = 'AI-generated illustrative motion. IPTC digital source type: ' + DST_URI + '. Not footage of Marche, its store, staff, customers, products or brands.';
+export const VIDEO_NOTE = 'AI-generated illustrative motion. IPTC digital source type: ' + DST_URI + '. Not footage of High Grade, its store, staff, customers, products or brands.';
 const XMP_NS = 'http://ns.adobe.com/xap/1.0/\0';
 const FF = process.env.FFMPEG || 'ffmpeg', FP = process.env.FFPROBE || 'ffprobe';
 

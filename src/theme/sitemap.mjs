@@ -83,8 +83,8 @@ export async function render(ctx) {
   }).join('\n');
 
   const crumbs = [CRUMB.home, [PATH, 'Site map']];
-  const title = 'Site Map | Marche';
-  const description = `Every page of the Marche site: the shop, deals and rewards, ${S.deliveryAreas.areas.length} South Bay delivery areas, resources, company and legal pages.`;
+  const title = 'Site Map | High Grade';
+  const description = `Every page of the High Grade site: the shop, deals and rewards, ${S.deliveryAreas.areas.length} South Bay delivery areas, resources, company and legal pages.`;
   const canonical = absUrl(ctx, PATH);
   const main = `
 ${hero({

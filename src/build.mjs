@@ -1,4 +1,4 @@
-// build.mjs - Marche redesign pitch: src/content/*.json -> static site in dist/ (or --out <dir> for a lane).
+// build.mjs - High Grade redesign pitch: src/content/*.json -> static site in dist/ (or --out <dir> for a lane).
 //   MSYS_NO_PATHCONV=1 node src/build.mjs [--out dist]
 // Node builtins + cwebp (webpmux optional) on PATH. Theme modules in src/theme/index.mjs MODULES each export
 // render(ctx) -> [{ path, html }]; path "/x/" writes x/index.html, "/404.html" writes 404.html. Exit 1 on a missing

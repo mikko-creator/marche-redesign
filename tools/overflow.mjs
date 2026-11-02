@@ -8,7 +8,7 @@ const w = Number(args.width || 390);
 const b = await launch({ port: 0 });
 try {
   const p = await b.newPage({ width: w, height: 900, mobile: false });
-  await p.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('marche-age-ok','1')}catch(e){}" });
+  await p.send('Page.addScriptToEvaluateOnNewDocument', { source: "try{localStorage.setItem('highgrade-age-ok','1')}catch(e){}" });
   await p.goto(args.url, { settle: 1200 });
   const r = await p.eval(`(() => {
     const W = innerWidth, out = [];

@@ -1,4 +1,4 @@
-// home.mjs - the home page "/" (HOME lane, "NOIR MARCHÉ"). Section order = the adopted operator's home (contract 6
+// home.mjs - the home page "/" (HOME lane, "NOIR PLATINUM"). Section order = the adopted operator's home (contract 6
 // HOME, 13 sections); every visible fact is read from ctx.site (site.json) or ctx.ia (ia.json), never retyped. New words
 // are neutral glue only (section labels, button labels, one-line format descriptions). No inline JS (contract D6).
 import fs from 'node:fs';
@@ -159,7 +159,7 @@ ${head('Brands', 'Brands on the <span class="accent">menu</span>', 'h-brands-h')
 </div>
 </section>`;
 
-  // ---------- 5. statement: the page's one "lights on" yellow band, the tagline in mega display type ----------
+  // ---------- 5. statement: the page's one "lights on" platinum band, the tagline in mega display type ----------
   const statementHtml = `<section class="h-statement band band--sun" aria-label="${escA(tag.join(' '))}">
 <div class="wrap wrap--wide">
 <p class="display display--mega h-statement__t" data-reveal><span class="h-statement__a">${esc(tag[0])} ${esc(tag[1])}</span> <span class="h-statement__b outline">${esc(tag[2])}</span></p>
@@ -208,7 +208,7 @@ ${SPOT.map((s, i) => { const c = cat(s.slug); return `<article class="h-spot" ar
 </section>
 <div class="h-seam h-seam--leaf" aria-hidden="true"><span class="h-seam__art screen"><span class="h-seam__in" data-depth="0.15">${gimg('g-leaf-cut', { alt: '', sizes: '(max-width: 720px) 22vw, (min-width: 768px) 18vw, 30vw' })}</span></span></div>`;
 
-  // ---------- 8. deals trio: site.json deals, big NATS numbers on yellow-tinted glass ----------
+  // ---------- 8. deals trio: site.json deals, big NATS numbers on platinum-tinted glass ----------
   const dealsHtml = `<section class="h-deals band band--beam" aria-labelledby="h-deals-h">
 <div class="band__clip" aria-hidden="true"><span class="h-deals__pool"></span></div>
 <div class="wrap wrap--wide">
